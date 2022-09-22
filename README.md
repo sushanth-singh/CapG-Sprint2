@@ -1,2 +1,2 @@
 # CapG-Sprint2
-Repository for sprint 2
+Repository to store the files for sprint 2 evaluation
