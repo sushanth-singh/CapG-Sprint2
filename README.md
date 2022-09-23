@@ -1,5 +1,5 @@
-# Defect Programmer Assignment
-This project aims to develop a Defect Programmer Assignments application where clients of a Software Development company report defects in software they purchased. These defects are assigned to programmers depending on the functional area they are handling.
+# Human Resource Management
+Menu-drive application human resource management to manage employees, projects and allocating/ de-allocating employees to projects.
 
 Read complete [SRS](Project/SRS/SRS_DefectProgrammer.pdf) Document here.
 
@@ -30,8 +30,7 @@ Read complete [SRS](Project/SRS/SRS_DefectProgrammer.pdf) Document here.
 
 
 ## Contributors:
-- [Aman Bhaskar](https://github.com/amanbh2)
-- [Karan Nareshbhai Telar](https://github.com/telarKaran)
-- [Krishna Chaitanya Chekka](https://github.com/Chaitu1018)
-- [Sreehari  Ps](https://github.com/sreeharipavvatta)
 - [Singuluri Sai Vamsee Krishna](https://github.com/ssvk053)
+- [Sushanth](https://github.com/sushanth-singh)
+
+
