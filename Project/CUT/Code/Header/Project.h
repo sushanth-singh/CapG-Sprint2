@@ -6,7 +6,7 @@ using namespace std;
 class Project
 {
     private:
-        string projId;//p001|telecom|
+        string projId;
         string type;
         string desc;
         string clientName;
