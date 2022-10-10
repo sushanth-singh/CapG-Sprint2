@@ -13,235 +13,244 @@
 void updateEmp(map<string,Employee> &E)
 {
  
- cout<<"ENTER EMPLOYEE  ID";
- string eId;
- cin>>eId;
- int flag=0;
- map<string,Employee>::iterator itr;
- itr = E.find(eId);
+    cout<<"ENTER EMPLOYEE ID: ";
+    
+    string eId;
+    cin>>eId;
+    int flag=0;
+    map<string,Employee>::iterator itr;
+    itr = E.find(eId);
       
-    if(itr == E.end())
-        cout << "EMPLOYEE IS NOT PRESENT" ;
+    if(itr == E.end()){
+        cout<<"*****************************************************"<<endl;
+        cout << "EMPLOYEE IS NOT PRESENT"<<endl ;
+        cout<<"*****************************************************"<<endl;
+    }
     else
     {              
-        int ch1;
-    
-    do{
-        
-        cout<<"\n#1 ADD firstName: "<<endl;
-        cout<<"#2 ADD lastName: "<<endl;
-        cout<<"#3 Add phone1: "<<endl;
-        cout<<"#4 Add phone2: "<<endl;
-        cout<<"#5 Add Bu: "<<endl;
-        cout<<"#6 Add practice "<<endl;
-        cout<<"#7 Add qualification "<<endl;
-        cout<<"#8 Add areaOfIntrest"<<endl;
-        cout<<"ENTER THE CHOICE: "<<endl;
-        cin>>ch1;
-
-       switch(ch1)
-        {
-           case 1:
+        int ch1;    
+        do
+        {  
+            cout<<"....................UPDATE EMPLOYEE MENU...................."<<endl;
+            cout<<"\n 1. ADD FIRST NAME "<<endl;
+            cout<<" 2. ADD LAST NAME "<<endl;
+            cout<<" 3. Add PHONE NUMBER 1 "<<endl;
+            cout<<" 4. Add PHONE NUMBER 2 "<<endl;
+            cout<<" 5. Add BUSINESS UNIT "<<endl;
+            cout<<" 6. Add PRACTICE "<<endl;
+            cout<<" 7. Add QUALIFICATION "<<endl;
+            cout<<" 8. Add AREA OF EXPERTISE"<<endl;
+            cout<<" 9. EXIT TO MAIN MENU"<<endl;
+            cout<<"..................................................."<<endl;
+            cout<<" ENTER THE CHOICE: "<<endl;
+            cin>>ch1;
+            cout<<"..................................................."<<endl;
+            switch(ch1)
             {
-                do{
-                    string firstName;
-                    cout<<"Enter the firstName :";
-                    getchar();
-                    getline(cin,firstName);
-                    try{
-                        if(validNames(firstName)){
-                            itr->second.setFirstName(firstName);
-                            cout<<"Employee first Name is successfully updated"<<endl;
-                            break;
+                case 1:
+                {
+                    do
+                    {
+                        string firstName;
+                        cout<<"ENTER THE FIRST NAME: ";
+                        getchar();
+                        getline(cin,firstName);
+                        try{
+                            if(validNames(firstName)){
+                                itr->second.setFirstName(firstName);
+                                cout<<"EMPLOYEE FIRST NAME IS SUCCESSFULLY UPDATED"<<endl;
+                                break;
+                            }
+                            else
+                                throw(1);
                         }
-                        else
-                            throw(1);
-                    }
-                    catch(int a){
-                        cout<<"INVALID STRING "<<endl;
-                        cout<<"ENTER VALID STRING AGAIN"<<endl;
-                    }
-                }while(1);
-            }
-            break;
+                        catch(int a){
+                            cout<<"INVALID FIRST NAME "<<endl;
+                            cout<<"ENTER VALID FIRST NAME AGAIN IN ONE WORD"<<endl;
+                        }
+                    }while(1);
+                }
+                break;
                   
-            case 2:
-            {
-                do
+                case 2:
                 {
-                    string lastName;
-                    cout<<"ENTER THE LASTNAME :";
-                    getchar();
-                    getline(cin,lastName);
-                    try{
-                        if(validNames(lastName)){
-                            itr->second.setLastName(lastName);
-                            cout<<"Employee Last Name is successfully updated"<<endl;
-                            break;
+                    do
+                    {
+                        string lastName;
+                        cout<<"ENTER THE LASTNAME :";
+                        getchar();
+                        getline(cin,lastName);
+                        try{
+                            if(validNames(lastName)){
+                                itr->second.setLastName(lastName);
+                                cout<<"EMPLOYEE LAST NAME IS SUCCESSFULLY UPDATED"<<endl;
+                                break;
+                            }
+                            else
+                                throw(1);
                         }
-                        else
-                            throw(1);
-                    }
-                    catch(int a){
-                        cout<<"INVALID STRING "<<endl;
-                        cout<<"ENTER VALID STRING AGAIN"<<endl;
-                    }
-                }while(1);
+                        catch(int a){
+                            cout<<"INVALID LAST NAME "<<endl;
+                            cout<<"ENTER VALID LAST NAME AGAIN IN ONE WORD"<<endl;
+                        }
+                    }while(1);
 
-             }
-             break;
-            case 3:
-            {
-                do
+                }
+                break;
+            
+                case 3:
                 {
-                    string ph1;
-                    cout<<"ENTER THE PHONE NUMBER :";
-                    getchar();
-                    getline(cin,ph1);
-                    try{
-                        if(validNumber(ph1)){
-                            itr->second.setPhone1(ph1);
-                            cout<<"Employee phone1  is successfully updated"<<endl;
-                            break;
+                    do
+                    {
+                        string ph1;
+                        cout<<"ENTER THE PHONE NUMBER 1:";
+                        getchar();
+                        getline(cin,ph1);
+                        try{
+                            if(validNumber(ph1)){
+                                itr->second.setPhone1(ph1);
+                                cout<<"EMPLOYEE PHONE NUMBER 1 IS SUCCESSFULLY UPDATED"<<endl;
+                                break;
+                            }
+                            else
+                                throw(1);
                         }
-                        else
-                            throw(1);
-                    }
-                    catch(int a){
-                        cout<<"INVALID STRING "<<endl;
-                        cout<<"ENTER VALID STRING AGAIN"<<endl;
-                    }
-                }while(1);
-                  
-            }
-            break;
-             case 4:
-            {
-                do
+                        catch(int a){
+                            cout<<"INVALID PHONE NUMBER "<<endl;
+                            cout<<"ENTER VALID PHONE NUMBER AGAIN WHICH CONTAINS 10 DIGITS"<<endl;
+                        }
+                    }while(1);
+                    
+                }
+                break;
+                
+                case 4:
                 {
-                    string ph2;
-                    cout<<"ENTER THE PHONE NUMBER :";
-                    getchar();
-                    getline(cin,ph2);
-                    try{
-                        if(validNumber(ph2)){
-                            itr->second.setPhone2(ph2);
-                            cout<<"Employee Phone2 is successfully updated"<<endl;
-                            break;
+                    do
+                    {
+                        string ph2;
+                        cout<<"ENTER THE PHONE NUMBER 2: ";
+                        getchar();
+                        getline(cin,ph2);
+                        try{
+                            if(validNumber(ph2)){
+                                itr->second.setPhone2(ph2);
+                                cout<<"EMPLOYEE PHONE NUMBER 2 IS SUCCESSFULLY UPDATED"<<endl;
+                                break;
+                            }
+                            else
+                                throw(1);
                         }
-                        else
-                            throw(1);
-                    }
-                    catch(int a){
-                        cout<<"INVALID STRING "<<endl;
-                        cout<<"ENTER VALID STRING AGAIN"<<endl;
-                    }
-                }while(1);
+                        catch(int a){
+                            cout<<"INVALID PHONE NUMBER 2 "<<endl;
+                            cout<<"ENTER VALID PHONE NUMBER 2 AGAIN WHICH CONTAINS 10 DIGITS"<<endl;
+                        }
+                    }while(1);
 
-             }
-             break;
-           case 5:
-           {
-                do
+                }
+                break;
+                case 5:
                 {
-                    string bu;
-                    cout<<"ENTER THE BUSINESS UNIT :";
-                    getchar();
-                    getline(cin,bu);
-                    try{
-                        if(validCharDigits(bu)){
-                            itr->second.setBu(bu);
-                            cout<<"Employee Business Unit is successfully updated"<<endl;
-                            break;
+                    do
+                    {
+                        string bu;
+                        cout<<"ENTER THE BUSINESS UNIT: ";
+                        getchar();
+                        getline(cin,bu);
+                        try{
+                            if(validCharDigits(bu)){
+                                itr->second.setBu(bu);
+                                cout<<"EMPLOYEE BUSINESS UNIT IS SUCCESSFULLY UPDATED"<<endl;
+                                break;
+                            }
+                            else
+                                throw(1);
                         }
-                        else
-                            throw(1);
-                    }
-                    catch(int a){
-                        cout<<"INVALID STRING "<<endl;
-                        cout<<"ENTER VALID STRING AGAIN"<<endl;
-                    }
-                }while(1);
-           }
-           break;
-            case 6:
-            {
-                do
-                {
-                    string practice;
-                    cout<<"ENTER THE PRACTICE :";
-                    getchar();
-                    getline(cin,practice);
-                    try{
-                        if(validCharDigits(practice)){
-                            itr->second.setPractice(practice);
-                            cout<<"Employee Practice is successfully updated"<<endl;
-                            break;
+                        catch(int a){
+                            cout<<"INVALID BUSINESS UNIT "<<endl;
+                            cout<<"ENTER VALID BUSINESS UNIT AGAIN"<<endl;
                         }
-                        else
-                            throw(1);
-                    }
-                    catch(int a){
-                        cout<<"INVALID STRING "<<endl;
-                        cout<<"ENTER VALID STRING AGAIN"<<endl;
-                    }
-                }while(1);
-             }
-             break;
+                    }while(1);
+                }
+                break;
 
-            case 7:
-            {
-                do
+                case 6:
                 {
-                    string qualification;
-                    cout<<"ENTER THE QUALIFICATION :";
-                    getchar();
-                    getline(cin,qualification);
-                    try{
-                        if(validCharDigits(qualification)){
-                            itr->second.setQualification(qualification);
-                             cout<<"Employee qualification is successfully updated"<<endl;
-                            break;
+                    do
+                    {
+                        string practice;
+                        cout<<"ENTER THE PRACTICE :";
+                        getchar();
+                        getline(cin,practice);
+                        try{
+                            if(validCharDigits(practice)){
+                                itr->second.setPractice(practice);
+                                cout<<"EMPLOYEE PRACTICE IS SUCCESSFULLY UPDATED"<<endl;
+                                break;
+                            }
+                            else
+                                throw(1);
                         }
-                        else
-                            throw(1);
-                    }
-                    catch(int a){
-                        cout<<"INVALID STRING "<<endl;
-                        cout<<"ENTER VALID STRING AGAIN"<<endl;
-                    }
-                }while(1);
-              }
-            break;
-            case 8:
-             {
-                do
+                        catch(int a){
+                            cout<<"INVALID PRACTICE "<<endl;
+                            cout<<"ENTER VALID PRACTICE AGAIN"<<endl;
+                        }
+                    }while(1);
+                }
+                break;
+
+                case 7:
                 {
-                    string areaOfIntrest;
-                    cout<<"ENTER THE AREA OF EXPERTISE :";
-                    getchar();
-                    getline(cin,areaOfIntrest);
-                    try{
-                        if(validCharDigits(areaOfIntrest)){
-                            itr->second.setAreaOfExpertise(areaOfIntrest);
-                             cout<<"Employee Area of Expertise is successfully updated"<<endl;
-                            break;
+                    do
+                    {
+                        string qualification;
+                        cout<<"ENTER THE QUALIFICATION :";
+                        getchar();
+                        getline(cin,qualification);
+                        try{
+                            if(validCharDigits(qualification)){
+                                itr->second.setQualification(qualification);
+                                cout<<"EMPLOYEE QUALIFICATION IS SUCCESSFULLY UPDATED"<<endl;
+                                break;
+                            }
+                            else
+                                throw(1);
                         }
-                        else
-                            throw(1);
-                    }
-                    catch(int a){
-                        cout<<"INVALID STRING "<<endl;
-                        cout<<"ENTER VALID STRING AGAIN"<<endl;
-                    }
-                }while(1);
- 
-             }
-             break;
+                        catch(int a){
+                            cout<<"INVALID QUALIFICATION "<<endl;
+                            cout<<"ENTER VALID QUALIFICATION AGAIN"<<endl;
+                        }
+                    }while(1);
+                }
+                break;
+
+                case 8:
+                {
+                    do
+                    {
+                        string areaOfIntrest;
+                        cout<<"ENTER THE AREA OF EXPERTISE :";
+                        getchar();
+                        getline(cin,areaOfIntrest);
+                        try{
+                            if(validCharDigits(areaOfIntrest)){
+                                itr->second.setAreaOfExpertise(areaOfIntrest);
+                                cout<<"EMPLOYEE AREA OF EXPERTISE IS SUCCESSFULLY UPDATED"<<endl;
+                                break;
+                            }
+                            else
+                                throw(1);
+                        }
+                        catch(int a){
+                            cout<<"INVALID AREA OF EXPERTISE "<<endl;
+                            cout<<"ENTER VALID AREA OF EXPERTISE AGAIN"<<endl;
+                        }
+                    }while(1);
+                }
+                break;
            
-        }
-        
-    }while(ch1<9);
+            }
+        }while(ch1<9);
     }
      saveEmployee(E);
 }
@@ -258,577 +267,587 @@ void updateEmp(map<string,Employee> &E)
 *********************************************/
 void updateProject(map<string,Project *> &P)
 {
+    cout<<"ENTER PROJECT  ID";
+    string pId;
+    cin>>pId;
+    int ch1;
  
- cout<<"ENTER PROJECT  ID";
- string pId;
- cin>>pId;
- int ch1;
- 
- map<string,Project *>::iterator itr;
- itr = P.find(pId);
+    map<string,Project *>::iterator itr;
+    itr = P.find(pId);
       
     if(itr == P.end())
-        cout << "PROJECT IS NOT PRESENT" ;
+        cout << "PROJECT IS NOT PRESENT"<<endl;
     else
     {              
-        if(itr->second->getType()=="telecom"){
-             telecom *tpr=(telecom *)itr->second;
-    
-                do{
-                    
-                    cout<<"\n#1 ADD DESCRIPTION: "<<endl;
-                    cout<<"#2 ADD CLIENT NAME: "<<endl;
-                    cout<<"#3 Add start date: "<<endl;
-                    cout<<"#4 Add end date: "<<endl;
-                    cout<<"#5 Add profit center: "<<endl;
-                    cout<<"#6 Add priority "<<endl;
-                    cout<<"#7 Add number of required employee"<<endl;
-                    cout<<"#8 Add internet Provider"<<endl;
-                    cout<<"#9 Add satellite Links"<<endl;
-                    cout<<"#10 Add telecom Standards"<<endl;
-                    cout<<"ENTER THE CHOICE: "<<endl;
-                    cin>>ch1;
-
-
-             
+        if(itr->second->getType()=="telecom")
+        {
+            telecom *tpr=(telecom *)itr->second;
+            do
+            {               
+                cout<<"....................UPDATE PROJECT MENU...................."<<endl;
+                cout<<"\n 1. ADD DESCRIPTION"<<endl;
+                cout<<" 2. ADD CLIENT NAME"<<endl;
+                cout<<" 3. ADD START DATE"<<endl;
+                cout<<" 4. ADD END DATE"<<endl;
+                cout<<" 5. ADD PROFIT CENTER"<<endl;
+                cout<<" 6. ADD PRIORITY "<<endl;
+                cout<<" 7. ADD NUMBER OF EMPLOYEE REQUIRED"<<endl;
+                cout<<" 8. ADD INTERNET PROVIDER"<<endl;
+                cout<<" 9. ADD SATELLITE LINKS"<<endl;
+                cout<<" 10. ADD TELECOM STANDARDS"<<endl;
+                cout<<" 11. EXIT TO MAIN MENU"<<endl;
+                cout<<"..................................................."<<endl;
+                cout<<"ENTER THE CHOICE: ";
+                cin>>ch1;
+                cout<<"..................................................."<<endl;
 
                 switch(ch1)
-                    {
+                {
                     case 1:
                     {
                         do
                         {
                             string description;
-                            cout<<"ENTER THE description :";
+                            cout<<"ENTER THE DESCRIPTION :";
                             getchar();
                             getline(cin,description);
-                            try{
+                            try
+                            {
                                 if(validCharDigits(description)){
                                     tpr->setdesc(description);
-                                     cout<<"Project description is successfully updated"<<endl;
-                                    break;
-                                }
-                                else
-                                    throw(1);
+                                    cout<<"PROJECT DESCRIPTION IS SUCCESSFULLY UPDATED"<<endl;
+                                break;
                             }
-                            catch(int a){
-                                cout<<"INVALID STRING "<<endl;
-                                cout<<"ENTER VALID STRING AGAIN"<<endl;
+                            else
+                                throw(1);
+                            }
+                            catch(int a)
+                            {
+                                cout<<"INVALID DESCRIPTION "<<endl;
+                                cout<<"ENTER VALID DESCRIPTION AGAIN"<<endl;
                             }
                         }while(1);
-                    
-                        }
-                        break;
-                            
-                        case 2:
-                        {
-                            do
-                            {
-                                string clientName;
-                                cout<<"ENTER THE clientName :";
-                                getchar();
-                                getline(cin,clientName);
-                                try{
-                                    if(validCharDigits(clientName)){
-                                        tpr->setclientName(clientName);
-                                        cout<<"Project clientName is successfully updated"<<endl;
-                                        break;
-                                    }
-                                    else
-                                        throw(1);
-                                }
-                                catch(int a){
-                                    cout<<"INVALID STRING "<<endl;
-                                    cout<<"ENTER VALID STRING AGAIN"<<endl;
-                                }
-                            }while(1);
-                            
-                
-                            
-                        }
-                        break;
-                        case 3:
-                        {
-                            do
-                            {
-                                string st;
-                                cout<<"ENTER THE START DATE :";
-                                getchar();
-                                getline(cin,st);
-                                try{
-                                    if(validDate(st)){
-                                        tpr->setstDate(st);
-                                        cout<<"Project start date is successfully updated"<<endl;
-                                        break;
-                                    }
-                                    else
-                                        throw(1);
-                                }
-                                catch(int a){
-                                    cout<<"INVALID STRING "<<endl;
-                                    cout<<"ENTER VALID STRING AGAIN"<<endl;
-                                }
-                            }while(1);
-                     
-                            
-                        }
-                        break;
-                        
-                        case 4:
-                       {
-                        do
-                            {
-                                string ed;
-                                cout<<"ENTER THE END DATE :";
-                                getchar();
-                                getline(cin,ed);
-                                try{
-                                    if(validDate(ed)){
-                                        tpr->setedDate(ed);
-                                        cout<<"Project end date is successfully updated"<<endl;
-                                        break;
-                                    }
-                                    else
-                                        throw(1);
-                                }
-                                catch(int a){
-                                    cout<<"INVALID STRING "<<endl;
-                                    cout<<"ENTER VALID STRING AGAIN"<<endl;
-                                }
-                            }while(1);
-                 
-                            
-                        }
-                        break;
-                        case 5:
-                        {
-                            string profit_center;
-                            cout<<"Enter profit center :";
-                            getchar();
-                            getline(cin,profit_center);  
-                            tpr->setprofCenter(profit_center);
-                            cout<<"Project profit center is successfully updated"<<endl;
-                        }
-                        break;
-                        case 6:
-                        {
-                            do
-                            {
-                                string priority;
-                                cout<<"ENTER THE priority :";
-                                getchar();
-                                getline(cin,priority);
-                                try{
-                                    if(validPriority(priority)){
-                                        tpr->setPriority(priority);
-                                        cout<<"Project priority is successfully updated"<<endl;
-                                        break;
-                                    }
-                                    else
-                                        throw(1);
-                                }
-                                catch(int a){
-                                    cout<<"INVALID STRING "<<endl;
-                                    cout<<"ENTER VALID STRING AGAIN"<<endl;
-                                }
-                            }while(1);
-                   
-                            
-                        }
-                        break;
-
-                        case 7:
-                        {
-                            int noOfEmp;
-                            cout<<"Enter the number of required employee :";
-                            getchar();
-                            cin>>noOfEmp;  
-                          tpr->setNoOfEmp(noOfEmp);
-                          cout<<"Project number of required employee is successfully updated"<<endl;
-                        
-                        }
-                        break;
-                        
-                        
-                        case 8:
-                        {
-                            do
-                            {
-                                string internetProvider;
-                                cout<<"ENTER THE InternetProvider :";
-                                getchar();
-                                getline(cin,internetProvider);
-                                try{
-                                    if(validCharDigits(internetProvider)){
-                                        tpr->setInternetProvider(internetProvider);
-                                        cout<<"Project Internet Provider is successfully updated"<<endl;
-                                        break;
-                                    }
-                                    else
-                                        throw(1);
-                                }
-                                catch(int a){
-                                    cout<<"INVALID STRING "<<endl;
-                                    cout<<"ENTER VALID STRING AGAIN"<<endl;
-                                }
-                            }while(1);
-                   
-                        
-                        }
-                        break;
-                        
-                        case 9:
-                        {
-                            do
-                            {
-                                string satelliteLinks;
-                                cout<<"ENTER THE satelliteLinks :";
-                                getchar();
-                                getline(cin,satelliteLinks);
-                                try{
-                                    if(validCharDigits(satelliteLinks)){
-                                        tpr->setSatelliteLinks(satelliteLinks);
-                                        cout<<"Project satelliteLinks is successfully updated"<<endl;
-                                        break;
-                                    }
-                                    else
-                                        throw(1);
-                                }
-                                catch(int a){
-                                    cout<<"INVALID STRING "<<endl;
-                                    cout<<"ENTER VALID STRING AGAIN"<<endl;
-                                }
-                            }while(1);
-                
-                        
-                        }
-                        break;
-
-                        
-                        case 10:
-                        {
-                            do
-                            {
-                                string telecomStandards;
-                                cout<<"ENTER THE telecom Standards :";
-                                getchar();
-                                getline(cin,telecomStandards);
-                                try{
-                                    if(validCharDigits(telecomStandards)){
-                                        tpr->setTelecomStandards(telecomStandards);
-                                        cout<<"Project telecom Standards is successfully updated"<<endl;
-                                        break;
-                                    }
-                                    else
-                                        throw(1);
-                                }
-                                catch(int a){
-                                    cout<<"INVALID STRING "<<endl;
-                                    cout<<"ENTER VALID STRING AGAIN"<<endl;
-                                }
-                            }while(1);
-                 
-                        
-                        }
-                        break;
                     }
-                }while(ch1<11);
-        }
-        else if(itr->second->getType()=="banking"){
-                   banking *bpr=(banking *)itr->second;
-                do{
-                    cout<<"\n#1 ADD DESCRIPTION: "<<endl;
-                    cout<<"#2 ADD CLIENT NAME: "<<endl;
-                    cout<<"#3 Add start date: "<<endl;
-                    cout<<"#4 Add end date: "<<endl;
-                    cout<<"#5 Add profit center: "<<endl;
-                    cout<<"#6 Add priority "<<endl;
-                    cout<<"#7 Add number of required employee"<<endl;
-                    cout<<"#8 Add current Account Module Purchased"<<endl;
-                    cout<<"#9 Add loan Account Module Purchased"<<endl;
-                    cout<<"#10 Add customizations"<<endl;
-                    cout<<"ENTER THE CHOICE: "<<endl;
-                    cin>>ch1;
-
-                switch(ch1)
-                    {
-                    case 1:
+                    break;
+                        
+                    case 2:
                     {
                         do
                         {
-                            string description;
-                            cout<<"ENTER THE description :";
+                            string clientName;
+                            cout<<"ENTER THE CLIENT NAME :";
                             getchar();
-                            getline(cin,description);
+                            getline(cin,clientName);
+                            try
+                            {
+                                if(validCharDigits(clientName))
+                                {
+                                    tpr->setclientName(clientName);
+                                    cout<<"PROJECT CLIENT NAME IS SUCCESSFULLY UPDATED"<<endl;
+                                    break;
+                                }
+                                else
+                                    throw(1);
+                            }
+                            catch(int a)
+                            {
+                                cout<<"INVALID CLIENT NAME "<<endl;
+                                cout<<"ENTER VALID CLIENT NAME AGAIN"<<endl;
+                            }
+                        }while(1);
+                    }
+                    break;
+
+                    case 3:
+                    {
+                        do
+                        {
+                            string st;
+                            cout<<"ENTER THE START DATE :";
+                            getchar();
+                            getline(cin,st);
+                            try
+                            {
+                                if(validDate(st))
+                                {
+                                    tpr->setstDate(st);
+                                    cout<<"PROJECT START DATE IS SUCCESSFULLY UPDATED"<<endl;
+                                    break;
+                                }
+                                else
+                                    throw(1);
+                            }
+                            catch(int a)
+                            {
+                                cout<<"INVALID START DATE "<<endl;
+                                cout<<"ENTER VALID START DATE AGAIN"<<endl;
+                            }
+                        }while(1);
+                    }
+                    break;
+                    
+                    case 4:
+                    {
+                        do
+                        {
+                            string ed;
+                            cout<<"ENTER THE END DATE :";
+                            getchar();
+                            getline(cin,ed);
                             try{
-                                if(validCharDigits(description)){
-                                    bpr->setdesc(description);
-                                    cout<<"Project description is successfully updated"<<endl;
+                                if(validDate(ed)){
+                                    tpr->setedDate(ed);
+                                    cout<<"PROJECT END DATE IS SUCCESSFULLY UPDATED"<<endl;
                                     break;
                                 }
                                 else
                                     throw(1);
                             }
                             catch(int a){
-                                cout<<"INVALID STRING "<<endl;
-                                cout<<"ENTER VALID STRING AGAIN"<<endl;
+                                cout<<"INVALID END DATE "<<endl;
+                                cout<<"ENTER VALID END DATE AGAIN"<<endl;
+                            }
+                        }while(1);
+                
+                        
+                    }
+                    break;
+                    case 5:
+                    {
+                        string profit_center;
+                        cout<<"ENTER PROFIT CENTER:";
+                        getchar();
+                        getline(cin,profit_center);  
+                        tpr->setprofCenter(profit_center);
+                        cout<<"PROJECT PROFIT CENTER IS SUCCESSFULLY UPDATED"<<endl;
+                    }
+                    break;
+                    case 6:
+                    {
+                        do
+                        {
+                            string priority;
+                            cout<<"ENTER THE PRIORITY:";
+                            getchar();
+                            getline(cin,priority);
+                            try{
+                                if(validPriority(priority)){
+                                    tpr->setPriority(priority);
+                                    cout<<"PROJECT PRIORITY IS SUCCESSFULLY UPDATED"<<endl;
+                                    break;
+                                }
+                                else
+                                    throw(1);
+                            }
+                            catch(int a){
+                                cout<<"INVALID PRIORITY "<<endl;
+                                cout<<"ENTER VALID PRIORITY AGAIN"<<endl;
+                            }
+                        }while(1);
+                
+                        
+                    }
+                    break;
+
+                    case 7:
+                    {
+                        int noOfEmp;
+                        cout<<"ENTER THE NUMBER OF EMPLOYEE REQUIRED:";
+                        getchar();
+                        cin>>noOfEmp;  
+                        tpr->setNoOfEmp(noOfEmp);
+                        cout<<"PROJECT NUMBER OF EMPLOYEE REQUIRED IS SUCCESSFULLY UPDATED"<<endl;
+                    
+                    }
+                    break;
+                    
+                    
+                    case 8:
+                    {
+                        do
+                        {
+                            string internetProvider;
+                            cout<<"ENTER THE INTERNET PROVIDER:";
+                            getchar();
+                            getline(cin,internetProvider);
+                            try{
+                                if(validCharDigits(internetProvider)){
+                                    tpr->setInternetProvider(internetProvider);
+                                    cout<<"PROJECT INTERNET PROVIDER IS SUCCESSFULLY UPDATED"<<endl;
+                                    break;
+                                }
+                                else
+                                    throw(1);
+                            }
+                            catch(int a){
+                                cout<<"INVALID INTERNET PROVIDER "<<endl;
+                                cout<<"ENTER VALID INTERNET PROVIDER AGAIN"<<endl;
+                            }
+                        }while(1);
+                
+                    
+                    }
+                    break;
+                    
+                    case 9:
+                    {
+                        do
+                        {
+                            string satelliteLinks;
+                            cout<<"ENTER THE SATELLITE :";
+                            getchar();
+                            getline(cin,satelliteLinks);
+                            try{
+                                if(validCharDigits(satelliteLinks)){
+                                    tpr->setSatelliteLinks(satelliteLinks);
+                                    cout<<"PROJECT SATELLITE IS SUCCESSFULLY UPDATED"<<endl;
+                                    break;
+                                }
+                                else
+                                    throw(1);
+                            }
+                            catch(int a){
+                                cout<<"INVALID SATELLITE "<<endl;
+                                cout<<"ENTER VALID SATELLITE AGAIN"<<endl;
                             }
                         }while(1);
             
-                            
-                        }
-                        break;
-                            
-                        case 2:
-                        {
-                            do
-                            {
-                                string clientName;
-                                cout<<"ENTER THE clientName :";
-                                getchar();
-                                getline(cin,clientName);
-                                try{
-                                    if(validCharDigits(clientName)){
-                                        bpr->setclientName(clientName);
-                                        cout<<"Project clientName is successfully updated"<<endl;
-                                        break;
-                                    }
-                                    else
-                                        throw(1);
-                                }
-                                catch(int a){
-                                    cout<<"INVALID STRING "<<endl;
-                                    cout<<"ENTER VALID STRING AGAIN"<<endl;
-                                }
-                            }while(1);
-
-                            
-                        }
-                        break;
-                        case 3:
-                        {
-                            do
-                            {
-                                string st;
-                                cout<<"ENTER THE START DATE :";
-                                getchar();
-                                getline(cin,st);
-                                try{
-                                    if(validDate(st)){
-                                        bpr->setstDate(st);
-                                        cout<<"Project start date is successfully updated"<<endl;
-                                        break;
-                                    }
-                                    else
-                                        throw(1);
-                                }
-                                catch(int a){
-                                    cout<<"INVALID STRING "<<endl;
-                                    cout<<"ENTER VALID STRING AGAIN"<<endl;
-                                }
-                            }while(1);
-    
-                            
-                        }
-                        break;
-                        
-                        case 4:
-                        {
-                            do
-                            {
-                                string ed;
-                                cout<<"ENTER THE END DATE :";
-                                getchar();
-                                getline(cin,ed);
-                                try{
-                                    if(validDate(ed)){
-                                        bpr->setedDate(ed);
-                                        cout<<"Project end date is successfully updated"<<endl;
-                                        break;
-                                    }
-                                    else
-                                        throw(1);
-                                }
-                                catch(int a){
-                                    cout<<"INVALID STRING "<<endl;
-                                    cout<<"ENTER VALID STRING AGAIN"<<endl;
-                                }
-                            }while(1);
-                            
-                        }
-                        break;
-                        case 5:
-                    {
-                            string profit_center;
-                            cout<<"Enter profit center :";
-                            getchar();
-                            getline(cin,profit_center);  
-                           bpr->setprofCenter(profit_center);
-                            cout<<"Project profit center is successfully updated"<<endl;
+                    
                     }
                     break;
-                        case 6:
-                        {
-                            do
-                            {
-                                string priority;
-                                cout<<"ENTER THE priority :";
-                                getchar();
-                                getline(cin,priority);
-                                try{
-                                    if(validPriority(priority)){
-                                        bpr->setPriority(priority);
-                                        cout<<"Project priority is successfully updated"<<endl;
-                                        break;
-                                    }
-                                    else
-                                        throw(1);
-                                }
-                                catch(int a){
-                                    cout<<"INVALID STRING "<<endl;
-                                    cout<<"ENTER VALID STRING AGAIN"<<endl;
-                                }
-                            }while(1);
-                            
-                        }
-                        break;
 
-                        case 7:
+                    
+                    case 10:
+                    {
+                        do
                         {
-                            int noOfEmp;
-                            cout<<"Enter the number of required employee :";
+                            string telecomStandards;
+                            cout<<"ENTER THE TELECOM STANDARD:";
                             getchar();
-                            cin>>noOfEmp;  
-                            bpr->setNoOfEmp(noOfEmp);
-                        cout<<"Project  number of required employee is successfully updated"<<endl;
-                        }
-                        break;
-                        
-                        
-                        case 8:
-                        {
-                            do
-                            {
-                                string currentAccountModulePurchased;
-                                cout<<"ENTER THE Current Account Module Purchased :";
-                                getchar();
-                                getline(cin,currentAccountModulePurchased);
-                                try{
-                                    if(validCharDigits(currentAccountModulePurchased)){
-                                        bpr->setCurrentAccountModulePurchased(currentAccountModulePurchased);
-                                        cout<<"Project Current Account Module Purchased is successfully updated"<<endl;
-                                        break;
-                                    }
-                                    else
-                                        throw(1);
+                            getline(cin,telecomStandards);
+                            try{
+                                if(validCharDigits(telecomStandards)){
+                                    tpr->setTelecomStandards(telecomStandards);
+                                    cout<<"PROJECT TELECOM STANDARD IS SUCCESSFULLY UPDATED"<<endl;
+                                    break;
                                 }
-                                catch(int a){
-                                    cout<<"INVALID STRING "<<endl;
-                                    cout<<"ENTER VALID STRING AGAIN"<<endl;
-                                }
-                            }while(1);
+                                else
+                                    throw(1);
+                            }
+                            catch(int a){
+                                cout<<"INVALID TELECOM STANDARD "<<endl;
+                                cout<<"ENTER VALID TELECOM STANDARD AGAIN"<<endl;
+                            }
+                        }while(1);
                 
-                        
-                        }
-                        break;
+                    
+                    }
+                    break;
+                }
+            }while(ch1!=11);
+        }
+        else if(itr->second->getType()=="banking")
+        {
+            banking *bpr=(banking *)itr->second;
+            do
+            {
+                cout<<"....................UPDATE PROJECT MENU...................."<<endl;
+                cout<<"\n#1 ADD DESCRIPTION"<<endl;
+                cout<<"#2 ADD CLIENT NAME"<<endl;
+                cout<<"#3 ADD START DATE"<<endl;
+                cout<<"#4 ADD END DATE"<<endl;
+                cout<<"#5 ADD PROFIT CENTER"<<endl;
+                cout<<"#6 ADD PRIORITY "<<endl;
+                cout<<"#7 ADD NUMBER OF EMPLOYEE REQUIRED"<<endl;
+                cout<<"#8 ADD CURRENT ACCOUNT MODULE PURCHASED"<<endl;
+                cout<<"#9 ADD LOAN ACCOUNT MODULE PUCHASED"<<endl;
+                cout<<"#10 ADD CUSTOMISATION"<<endl;
+                cout<<"#11 EXIT TO MAIN MENU"<<endl;
+                cout<<"..................................................."<<endl;
+                cout<<"ENTER THE CHOICE: "<<endl;
+                cin>>ch1;
+                cout<<"..................................................."<<endl;
 
-                        case 9:
+                switch(ch1)
+                {
+                    case 1:
+                    {
+                        do
                         {
-                            do
+                            string description;
+                            cout<<"ENTER THE DESCRIPTION :";
+                            getchar();
+                            getline(cin,description);
+                            try
                             {
-                                string loanAccountModulePurchased;
-                                cout<<"ENTER THE loanAccountModulePurchased :";
-                                getchar();
-                                getline(cin,loanAccountModulePurchased);
-                                try{
-                                    if(validCharDigits(loanAccountModulePurchased)){
-                                        bpr->setLoanAccountModulePurchased(loanAccountModulePurchased);
-                                        cout<<"Project Loan Account Module Purchased is successfully updated"<<endl;
-                                        break;
-                                    }
-                                    else
-                                        throw(1);
+                                if(validCharDigits(description))
+                                {
+                                    bpr->setdesc(description);
+                                    cout<<"PROJECT DESCRIPTION IS SUCCESSFULLY UPDATED"<<endl;
+                                    break;
                                 }
-                                catch(int a){
-                                    cout<<"INVALID STRING "<<endl;
-                                    cout<<"ENTER VALID STRING AGAIN"<<endl;
-                                }
-                            }while(1);
-                
-                        
-                        }
-                        break;
-
-
-                        case 10:
+                                else
+                                    throw(1);
+                            }
+                            catch(int a)
+                            {
+                                cout<<"INVALID STRING "<<endl;
+                                cout<<"ENTER VALID STRING AGAIN"<<endl;
+                            }
+                        }while(1);
+                    }
+                    break;
+                            
+                    case 2:
+                    {
+                        do
                         {
-                            do
-                            {
-                                string customizations;
-                                cout<<"ENTER THE customizations :";
-                                getchar();
-                                getline(cin,customizations);
-                                try{
-                                    if(validCharDigits(customizations)){
-                                        bpr->setCustomizations(customizations);
-                                        cout<<"Project customizations is successfully updated"<<endl;
-                                        break;
-                                    }
-                                    else
-                                        throw(1);
+                            string clientName;
+                            cout<<"ENTER THE CLIENT NAME :";
+                            getchar();
+                            getline(cin,clientName);
+                            try{
+                                if(validCharDigits(clientName)){
+                                    bpr->setclientName(clientName);
+                                    cout<<"PROJECT CLIENT NAME IS SUCCESSFULLY UPDATED"<<endl;
+                                    break;
                                 }
-                                catch(int a){
-                                    cout<<"INVALID STRING "<<endl;
-                                    cout<<"ENTER VALID STRING AGAIN"<<endl;
-                                }
-                            }while(1);
-                   
-                        
-                        }
-                        break;
+                                else
+                                    throw(1);
+                            }
+                            catch(int a){
+                                cout<<"INVALID CLIENT NAME "<<endl;
+                                cout<<"ENTER VALID CLIENT NAME AGAIN"<<endl;
+                            }
+                        }while(1);
+
                         
                     }
-                }while(ch1<11);
+                    break;
+                    
+                    case 3:
+                    {
+                        do
+                        {
+                            string st;
+                            cout<<"ENTER THE START DATE :";
+                            getchar();
+                            getline(cin,st);
+                            try{
+                                if(validDate(st)){
+                                    bpr->setstDate(st);
+                                    cout<<"PROJECT START DATE IS SUCCESSFULLY UPDATED"<<endl;
+                                    break;
+                                }
+                                else
+                                    throw(1);
+                            }
+                            catch(int a){
+                                cout<<"INVALID STRING "<<endl;
+                                cout<<"ENTER VALID STRING AGAIN"<<endl;
+                            }
+                        }while(1);
+
+                        
+                    }
+                    break;
+                    
+                    case 4:
+                    {
+                        do
+                        {
+                            string ed;
+                            cout<<"ENTER THE END DATE :";
+                            getchar();
+                            getline(cin,ed);
+                            try{
+                                if(validDate(ed)){
+                                    bpr->setedDate(ed);
+                                    cout<<"PROJECT END DATE IS SUCCESSFULLY UPDATED"<<endl;
+                                    break;
+                                }
+                                else
+                                    throw(1);
+                            }
+                            catch(int a){
+                                cout<<"INVALID END DATE "<<endl;
+                                cout<<"ENTER VALID END DATE AGAIN"<<endl;
+                            }
+                        }while(1);
+                        
+                    }
+                    break;
+                    
+                    case 5:
+                    {
+                        string profit_center;
+                        cout<<"ENTER PROFIT CENTER :";
+                        getchar();
+                        getline(cin,profit_center);  
+                        bpr->setprofCenter(profit_center);
+                        cout<<"PROJECT PROFIT CENTER IS SUCCESSFULLY UPDATED"<<endl;
+                    }
+                    break;
+                    
+                    case 6:
+                    {
+                        do
+                        {
+                            string priority;
+                            cout<<"ENTER THE PRIORITY :";
+                            getchar();
+                            getline(cin,priority);
+                            try{
+                                if(validPriority(priority)){
+                                    bpr->setPriority(priority);
+                                    cout<<"PROJECT PRIORITY IS SUCCESSFULLY UPDATED"<<endl;
+                                    break;
+                                }
+                                else
+                                    throw(1);
+                            }
+                            catch(int a){
+                                cout<<"INVALID PRIORITY "<<endl;
+                                cout<<"ENTER VALID PRIORITY AGAIN"<<endl;
+                            }
+                        }while(1);
+                        
+                    }
+                    break;
+
+                    case 7:
+                    {
+                        int noOfEmp;
+                        cout<<"ENTER THE NUMBER OF EMPLOYEE REQUIRED: ";
+                        getchar();
+                        cin>>noOfEmp;  
+                        bpr->setNoOfEmp(noOfEmp);
+                        cout<<"PROJECT NUMBER OF EMPLOYEE REQUIRED IS SUCCESSFULLY UPDATED"<<endl;
+                    }
+                    break;
+                    
+                    
+                    case 8:
+                    {
+                        do
+                        {
+                            string currentAccountModulePurchased;
+                            cout<<"ENTER THE CURRENT ACCOUNT MODULE PURCHASED: ";
+                            getchar();
+                            getline(cin,currentAccountModulePurchased);
+                            try{
+                                if(validCharDigits(currentAccountModulePurchased)){
+                                    bpr->setCurrentAccountModulePurchased(currentAccountModulePurchased);
+                                    cout<<"PROJECT CURRENT ACCOUNT MODULE PURCHASED IS SUCCESSFULLY UPDATED"<<endl;
+                                    break;
+                                }
+                                else
+                                    throw(1);
+                            }
+                            catch(int a){
+                                cout<<"INVALID CURRENT ACCOUNT MODULE PURCHASED "<<endl;
+                                cout<<"ENTER VALID CURRENT ACCOUNT MODULE PURCHASED AGAIN"<<endl;
+                            }
+                        }while(1);
+                    }
+                    break;
+
+                    case 9:
+                    {
+                        do
+                        {
+                            string loanAccountModulePurchased;
+                            cout<<"ENTER THE LOAN ACCOUNT MODULE PURCHASED: ";
+                            getchar();
+                            getline(cin,loanAccountModulePurchased);
+                            try{
+                                if(validCharDigits(loanAccountModulePurchased)){
+                                    bpr->setLoanAccountModulePurchased(loanAccountModulePurchased);
+                                    cout<<"PROJECT LOAN ACCOUNT MODULE PURCHASED IS SUCCESSFULLY UPDATED"<<endl;
+                                    break;
+                                }
+                                else
+                                    throw(1);
+                            }
+                            catch(int a){
+                                cout<<"INVALID LOAN ACCOUNT MODULE PURCHASED "<<endl;
+                                cout<<"ENTER VALID LOAN ACCOUNT MODULE PURCHASED AGAIN"<<endl;
+                            }
+                        }while(1);
+                    }
+                    break;
+
+
+                    case 10:
+                    {
+                        do
+                        {
+                            string customizations;
+                            cout<<"ENTER THE CUSTOMIZATION :";
+                            getchar();
+                            getline(cin,customizations);
+                            try{
+                                if(validCharDigits(customizations)){
+                                    bpr->setCustomizations(customizations);
+                                    cout<<"PROJECT CUSTOMIZATION IS SUCCESSFULLY UPDATED"<<endl;
+                                    break;
+                                }
+                                else
+                                    throw(1);
+                            }
+                            catch(int a){
+                                cout<<"INVALID CUSTOMIZATION "<<endl;
+                                cout<<"ENTER VALID CUSTOMIZATION AGAIN"<<endl;
+                            }
+                        }while(1);
+                    }
+                    break;   
+                }
+            }while(ch1!=11);
 
         }
         else{
 
                do{
-                    cout<<"\n#1 ADD DESCRIPTION: "<<endl;
-                    cout<<"#2 ADD CLIENT NAME: "<<endl;
-                    cout<<"#3 Add start date: "<<endl;
-                    cout<<"#4 Add end date: "<<endl;
-                    cout<<"#5 Add profit center: "<<endl;
-                    cout<<"#6 Add priority "<<endl;
-                    cout<<"#7 Add number of required employee"<<endl;
+                    cout<<"....................UPDATE PROJECT MENU...................."<<endl;
+                    cout<<"\n#1 ADD DESCRIPTION"<<endl;
+                    cout<<"#2 ADD CLIENT NAME"<<endl;
+                    cout<<"#3 ADD START DATE"<<endl;
+                    cout<<"#4 ADD END DATE"<<endl;
+                    cout<<"#5 ADD PROFIT CENTER"<<endl;
+                    cout<<"#6 ADD PRIORITY "<<endl;
+                    cout<<"#7 ADD NUMBER OF EMPLOYEE REQUIRED"<<endl;
+                    cout<<"#8 EXIT TO MAIN MENU"<<endl;
+                    cout<<"..................................................."<<endl;
                     cout<<"ENTER THE CHOICE: "<<endl;
                     cin>>ch1;
+                    cout<<"..................................................."<<endl;
 
-                switch(ch1)
+                    switch(ch1)
                     {
-                    case 1:
-                    {   
-                        do
-                        {
-                            string description;
-                            cout<<"ENTER THE description :";
-                            getchar();
-                            getline(cin,description);
-                            try{
-                                if(validCharDigits(description)){
-                                    itr->second->setdesc(description);
-                                    cout<<"Project description is successfully updated"<<endl;
-                                    break;
+                        case 1:
+                        {   
+                            do
+                            {
+                                string description;
+                                cout<<"ENTER THE DESCRIPTION :";
+                                getchar();
+                                getline(cin,description);
+                                try{
+                                    if(validCharDigits(description)){
+                                        itr->second->setdesc(description);
+                                        cout<<"PROJECT DESCRIPTION IS SUCCESSFULLY UPDATED"<<endl;
+                                        break;
+                                    }
+                                    else
+                                        throw(1);
                                 }
-                                else
-                                    throw(1);
-                            }
-                            catch(int a){
-                                cout<<"INVALID STRING "<<endl;
-                                cout<<"ENTER VALID STRING AGAIN"<<endl;
-                            }
-                        }while(1);
-  
+                                catch(int a){
+                                    cout<<"INVALID DESCRIPTION "<<endl;
+                                    cout<<"ENTER VALID DESCRIPTION AGAIN"<<endl;
+                                }
+                            }while(1);
+    
                         }
                         break;
                             
@@ -837,21 +856,21 @@ void updateProject(map<string,Project *> &P)
                             do
                             {
                                 string clientName;
-                                cout<<"ENTER THE clientName :";
+                                cout<<"ENTER THE CLIENT NAME :";
                                 getchar();
                                 getline(cin,clientName);
                                 try{
                                     if(validCharDigits(clientName)){
                                         itr->second->setclientName(clientName);
-                                        cout<<"Project clientName is successfully updated"<<endl;
+                                        cout<<"PROJECT CLIENT NAME IS SUCCESSFULLY UPDATED"<<endl;
                                         break;
                                     }
                                     else
                                         throw(1);
                                 }
                                 catch(int a){
-                                    cout<<"INVALID STRING "<<endl;
-                                    cout<<"ENTER VALID STRING AGAIN"<<endl;
+                                    cout<<"INVALID CLIENT NAME "<<endl;
+                                    cout<<"ENTER VALID CLIENT NAME AGAIN"<<endl;
                                 }
                             }while(1);
                     
@@ -869,7 +888,7 @@ void updateProject(map<string,Project *> &P)
                                 try{
                                     if(validDate(st)){
                                        itr->second->setstDate(st);
-                                       cout<<"Project start date is successfully updated"<<endl;
+                                       cout<<"PROJECT START DATE IS SUCCESSFULLY UPDATED"<<endl;
                                         break;
                                     }
                                     else
@@ -895,14 +914,14 @@ void updateProject(map<string,Project *> &P)
                                     if(validDate(ed)){
                                         if(date_cmp(ed)==1)
                                         itr->second->setedDate(ed);
-                                       cout<<"Project end date is successfully updated"<<endl;
+                                       cout<<"PROJECT END DATE IS SUCCESSFULLY UPDATED"<<endl;
                                             break;                                
                                     }
                                     throw(1);
                                 }
                                 catch(int a){
                                     cout<<"INVALID END DATE "<<endl;
-                                    cout<<"ENTER VALID STRING AGAIN"<<endl;
+                                    cout<<"ENTER VALID END DATE AGAIN"<<endl;
                                 }
                             }while(1);
                             
@@ -911,11 +930,11 @@ void updateProject(map<string,Project *> &P)
                         case 5:
                          {
                             string profit_center;
-                            cout<<"Enter profit center :";
+                            cout<<"ENTER THE PROFIT CENTER:";
                             getchar();
                             getline(cin,profit_center);  
                             itr->second->setprofCenter(profit_center);
-                             cout<<"Project profit center is successfully updated"<<endl;
+                             cout<<"PROJECT PROFIT CENTER IS SUCCESSFULLY UPDATED"<<endl;
                         }
                         break;
                         case 6:
@@ -923,21 +942,21 @@ void updateProject(map<string,Project *> &P)
                             do
                             {
                                 string priority;
-                                cout<<"ENTER THE priority :";
+                                cout<<"ENTER THE PRIORITY :";
                                 getchar();
                                 getline(cin,priority);
                                 try{
                                     if(validPriority(priority)){
                                         itr->second->setPriority(priority);
-                                        cout<<"Project priority is successfully updated"<<endl;
+                                        cout<<"PROJECT PRIORITY IS SUCCESSFULLY UPDATED"<<endl;
                                         break;
                                     }
                                     else
                                         throw(1);
                                 }
                                 catch(int a){
-                                    cout<<"INVALID STRING "<<endl;
-                                    cout<<"ENTER VALID STRING AGAIN"<<endl;
+                                    cout<<"INVALID PRIORITY "<<endl;
+                                    cout<<"ENTER VALID PRIORITY AGAIN"<<endl;
                                 }
                             }while(1);
                             
@@ -947,17 +966,17 @@ void updateProject(map<string,Project *> &P)
                         case 7:
                         {
                             int noOfEmp;
-                            cout<<"Enter the number of requirred employee :";
+                            cout<<"ENTER THE NUMBER OF EMPLOYEES REQUIRED:";
                             getchar();
                             cin>>noOfEmp;  
                             itr->second->setNoOfEmp(noOfEmp);
-                            cout<<"Project number of requirred employee is successfully updated"<<endl;
+                            cout<<"PROJECT NUMBER OF EMPLOYEES REQUIRED IS SUCCESSFULLY UPDATED"<<endl;
                         }
                         break;
                         
                         
                     }
-                }while(ch1<8);
+                }while(ch1!=8);
         }
                     
     }

@@ -17,20 +17,20 @@ map<string,Employee>  loadEmployee(string Empfile)
    input.open(Empfile);
    if (!input.is_open())
    {
-      cout<<"Unable to open input file " << Empfile << endl;
+      cout<<"UNABLE TO OPEN INPUT FILE " << Empfile << endl;
       return E;
    }
 
    string line;
    ofstream outfile;
-   outfile.open("../data/errEmpName.txt");
+   outfile.open(ERREMPLOYEE);
    if (!outfile.is_open())
    {
-         cout << "Unable to open error file for writting  errFileName.txt" << endl;
+         cout << "UNABLE TO OPEN ERROR FILE FOR WRITNG" << endl;
          return E;
    }
 
-stringstream ss;
+   stringstream ss;
    while(getline(input,line))
    {     
       ss.clear();
@@ -149,8 +149,7 @@ stringstream ss;
       }
 
       if(getline(ss,areaOfExpertise,'|'))
-      {
-         
+      {         
          if(validCharDigits(areaOfExpertise))
          {
             e.setAreaOfExpertise(areaOfExpertise);
@@ -196,18 +195,6 @@ stringstream ss;
    outfile.close();
    input.close();
 
-   cout<<"i="<<i<<endl;
-   int c=i;
-
-   cout<<"Employeeee data :"<<endl;
-   map<string,Employee>::iterator itr;
-
-   for(itr = E.begin(); itr != E.end(); ++itr) 
-   {        
-      cout<<"\nEMPLOYEE ID: " << itr->first<<endl ;
-      itr->second.display();
-      cout <<'\n';    
-   }
 
    return E;
 }
@@ -220,257 +207,234 @@ stringstream ss;
  *
 *********************************************/
 
-map<string,Project *> loadProject(string projectFile){
-  ifstream input1;
-     map<string,Project *> P;
-          Project  *p;
-    input1.open(projectFile);
-              if (!input1.is_open())
-              {
-                    cout<<"Unable to open input file " << projectFile<< endl;
-                    return P;
-              }
-              string line1;
-              ofstream outfile1;
-              outfile1.open("../data/errProjectName.txt");
-              if (!outfile1.is_open())
-              {
-                    cout << "Unable to open error file for writting  errFileName.txt" << endl;
-                    return P;
-              }
-              while(getline(input1,line1))
-              {
-                     stringstream ss1(line1);
-                     string pId;
-                     string type;
-                     string desc;
-                     string clientName;
-                     string stDate;
-                     string edDate;
-                     string profCenter;
-                     string priority;
-                     string extraLine;
-                    int noOfEmp;
-                    string SnoOfEmp;
-                    int noOfAllocated=0;
-                    string SnoOfAllocated;
-                    int count1=0;
-                     if(getline(ss1,pId,'|')){
-                       
-                        count1++;
-                     }
-                     if(getline(ss1,type,'|')){
-                        
-                        count1++;
-                     }
+map<string,Project *> loadProject(string projectFile)
+{
+   ifstream input1;
+   map<string,Project *> P;
+   Project  *p;
+   input1.open(projectFile);
+   if (!input1.is_open())
+   {
+      cout<<"Unable to open input file " << projectFile<< endl;
+      return P;
+   }
+   string line1;
+   ofstream outfile1;
+   outfile1.open(ERRPROJECT);
+   if (!outfile1.is_open())
+   {
+         cout << "Unable to open error file for writting  errFileName.txt" << endl;
+         return P;
+   }
+   while(getline(input1,line1))
+   {
+      stringstream ss1(line1);
+      string pId;
+      string type;
+      string desc;
+      string clientName;
+      string stDate;
+      string edDate;
+      string profCenter;
+      string priority;
+      string extraLine;
+      int noOfEmp;
+      string SnoOfEmp;
+      int noOfAllocated=0;
+      string SnoOfAllocated;
+      int count1=0;
+      if(getline(ss1,pId,'|')){
+         
+         count1++;
+      }
+         
+      if(getline(ss1,type,'|')){
+         
+         count1++;
+      }
 
-                     if(getline(ss1,desc,'|')){
-                        
-                        count1++;
-                     }
-                     if(getline(ss1,clientName,'|')){
-                           if(validCharDigits(clientName)){
-                              count1++;
-                           }else{
-                              cout<<pId<<"INVALID CLIENT NAME"<<endl;
-                           }
-                     }
-                     if(getline(ss1,stDate,'|')){
-                        if(validDate(stDate)){
-                           count1++;
-                        }else{
-                           cout<<pId<<"INVALID START DATE"<<endl;
-                        }
-                     }
-                     if(getline(ss1,edDate,'|')){
-                        if(validDate(edDate)){
-                           count1++;
-                        }else{
-                           cout<<pId<<"INVALID END DATE"<<endl;
-                        } 
-                        
-                     }
-                     if(getline(ss1,profCenter,'|')){
-                         
-                        count1++;
-                     }
+      if(getline(ss1,desc,'|')){
+         
+         count1++;
+      }
 
-                    if(getline(ss1,priority,'|'))
-                     {
-                        if(validPriority(priority)){
-                           count1++;
-                        }else{
-                           cout<<pId<<"INVALID PRIORITY"<<endl;
-                        }
-                      
-                          
-                     }
-                    if(getline(ss1,SnoOfEmp,'|'))
-                     {
-                        noOfEmp = atoi(SnoOfEmp.c_str());
-                       
-                        count1++;  
-                     }
+      if(getline(ss1,clientName,'|')){
+            if(validCharDigits(clientName)){
+               count1++;
+            }else{
+               cout<<pId<<"INVALID CLIENT NAME"<<endl;
+            }
+      }
+      
+      if(getline(ss1,stDate,'|')){
+         if(validDate(stDate)){
+            count1++;
+         }else{
+            cout<<pId<<"INVALID START DATE"<<endl;
+         }
+      }
 
-                    if(getline(ss1,SnoOfAllocated,'|'))
-                     {
-                        noOfAllocated = atoi(SnoOfAllocated.c_str());
-                      
-                        count1++;  
-                     }
-                     //transform(type.begin(), type.end(), type.begin(), ::tolower);
-                        if(type=="telecom")
-                        {
-                             string internetProvider;
-                             string  satelliteLinks;
-                             string  telecomStandards;
-                            if(getline(ss1,internetProvider,'|'))
-                            {
-                              if(validNames(internetProvider)){
-                                 count1++;  
-                              }else{
-                                 cout<<pId<<"INVALID INTERNET PROVIDER"<<endl;
-                              }
-                            }
-                            if(getline(ss1,satelliteLinks,'|'))
-                            {
-                                 if(validNames(satelliteLinks)){
-                                 count1++;  
-                              }else{
-                                 cout<<pId<<"INVALID SATELLITE LINKS"<<endl;
-                              } 
-                            }
-                            if(getline(ss1,telecomStandards,'|'))
-                            {
-                                 if(validCharDigits(telecomStandards)){
-                                    count1++;  
-                                 }else{
-                                    cout<<pId<<"INVALID TELECOM STANDARDS"<<endl;
-                                 } 
-                            }
-                            if(getline(ss1,extraLine,'|'))
-                            {
-                                 count1++;  
-                            }
-                            if(count1==13)
-                            {
-                                cout<<"TELECOM"<<endl;
-                               telecom *t = new telecom;
-                               *t = telecom(pId, type, desc, clientName,  stDate, edDate,  profCenter,  priority, noOfEmp,noOfAllocated,internetProvider, satelliteLinks,  telecomStandards);
-                               p=t;
-                               P[pId]=p;
-                            }
-                            else
-                            {
-                               outfile1<<line1<<endl;  
-                            }
-                           
-                        }
-                        else if(type=="banking")
-                        {
-                            string currentAccountModulePurchased;
-                            string loanAccountModulePurchased ;
-                            string  customizations  ;
-                            if(getline(ss1,currentAccountModulePurchased,'|'))
-                            {
-                                 if(validYN(currentAccountModulePurchased)){
-                                    count1++;
-                                 }else{
-                                    cout<<pId<<"INVALID currentAccountModulePurchased"<<endl;
-                                 }
-                            }
-                            if(getline(ss1,loanAccountModulePurchased,'|'))
-                            {
-                                 if(validYN(loanAccountModulePurchased)){
-                                    count1++;
-                                 }else{
-                                    cout<<pId<<"INVALID loanAccountModulePurchased"<<endl;
-                                 }  
-                            }
-                             if(getline(ss1,customizations,'|'))
-                            {
-                                 count1++;  
-                            }
+      if(getline(ss1,edDate,'|')){
+         if(validDate(edDate)){
+            count1++;
+         }else{
+            cout<<pId<<"INVALID END DATE"<<endl;
+         } 
+         
+      }
+      
+      if(getline(ss1,profCenter,'|')){
+         count1++;
+      }
 
-                            if(getline(ss1,extraLine,'|'))
-                            {
-                                 count1++;  
-                            }
-                            if(count1==13)
-                            {
-                               banking *b = new banking;
-                               *b = banking(pId, type, desc, clientName,  stDate, edDate,  profCenter,  priority, noOfEmp,noOfAllocated,currentAccountModulePurchased, loanAccountModulePurchased,customizations);
-                                p= b;
-                                P[pId]=p;
-                            }
-                            else
-                            {
-                               outfile1<<line1<<endl;  
-                            }
-                            
-                        }
-                        else 
-                        {
-                            if(getline(ss1,extraLine,'|'))
-                            {
-                                 count1++;  
-                            }
-                            if ((count1 ==10))
-                           {
-                              Project *p2 = new Project;
-                              *p2 = Project(pId,type,desc, clientName,  stDate,  edDate,  profCenter,  priority,  noOfEmp, noOfAllocated);
-                              p=p2;
-                              P[pId]=p;
-                             }      
-                              else
-                              {
-                                 outfile1<<line1<<endl;
-                              }
-                        
-              }
-                    
-             } // end of while line in file
-             outfile1.close();
-             input1.close();
-             cout<<"Project data :"<<endl;
-             map<string,Project *>::iterator itr1;
-             for(itr1=P.begin();itr1!=P.end();itr1++)
-             {
-                cout<<"Inside project for:"<<endl;
-                itr1->second->display();
-                cout<<itr1->second->getType();
-                    string type1 =itr1->second->getType();
-                   // transform(type.begin(), type.end(), type.begin(), ::tolower);
-                    cout<<"type"<<type1<<endl;
-                    if(type1 == "telecom")
-                    {
-                        cout<<"Inside telecom for:"<<endl;
-                     cout<<"\nPROJECT ID: " << itr1->first<<endl; 
-                     telecom *tpr=(telecom *)itr1->second;
-                     tpr->display();
-                     cout <<'\n';    
-               
-                    }
-                    else if(type1 == "banking")
-                    {
-                        cout<<"Inside banking for:"<<endl;
-                     cout<<"\nPROJECT ID: " << itr1->first<<endl; 
-                     banking *bpr=(banking *)itr1->second;
-                     bpr->display();
-                     cout <<'\n';    
-               
-                    }
-                    else
-                   {
-                        cout<<"\nPROJECT ID: " << itr1->first<<endl; 
-                        itr1->second->display();
-                        cout <<'\n';    
-               
-                   }
-             }
-
-             return P;
+      if(getline(ss1,priority,'|'))
+      {
+         if(validPriority(priority))
+         {
+            count1++;
+         }else
+         {
+            cout<<pId<<"INVALID PRIORITY"<<endl;
+         }    
+      }
+         if(getline(ss1,SnoOfEmp,'|'))
+         {
+            noOfEmp = atoi(SnoOfEmp.c_str());
             
+            count1++;  
+         }
+
+         if(getline(ss1,SnoOfAllocated,'|'))
+         {
+            noOfAllocated = atoi(SnoOfAllocated.c_str());
+            
+            count1++;  
+         }
+         
+         if(type=="telecom")
+         {
+            string internetProvider;
+            string  satelliteLinks;
+            string  telecomStandards;
+            if(getline(ss1,internetProvider,'|'))
+            {
+               if(validNames(internetProvider)){
+                  count1++;  
+               }else
+               {
+                  cout<<pId<<" INVALID INTERNET PROVIDER"<<endl;
+               }
+            }
+            
+            if(getline(ss1,satelliteLinks,'|'))
+            {
+               if(validNames(satelliteLinks)){
+               count1++;  
+               }else
+               {
+                  cout<<pId<<"INVALID SATELLITE LINKS"<<endl;
+               } 
+            }
+            
+            if(getline(ss1,telecomStandards,'|'))
+            {
+               if(validCharDigits(telecomStandards)){
+                  count1++;  
+               }else{
+                  cout<<pId<<"INVALID TELECOM STANDARDS"<<endl;
+               } 
+            }
+            
+            if(getline(ss1,extraLine,'|'))
+            {
+               count1++;  
+            }
+            if(count1==13)
+            {
+               //cout<<"TELECOM"<<endl;
+               telecom *t = new telecom;
+               *t = telecom(pId, type, desc, clientName,  stDate, edDate,  profCenter,  priority, noOfEmp,noOfAllocated,internetProvider, satelliteLinks,  telecomStandards);
+               p=t;
+               P[pId]=p;
+            }
+            else
+            {
+               outfile1<<line1<<endl;  
+            }
+            
+         }
+         else if(type=="banking")
+         {
+            string currentAccountModulePurchased;
+            string loanAccountModulePurchased ;
+            string  customizations  ;
+
+            if(getline(ss1,currentAccountModulePurchased,'|'))
+            {
+               if(validYN(currentAccountModulePurchased))
+               {
+                  count1++;
+               }else
+               {
+                  cout<<pId<<"INVALID currentAccountModulePurchased"<<endl;
+               }
+            }
+            if(getline(ss1,loanAccountModulePurchased,'|'))
+            {
+               if(validYN(loanAccountModulePurchased)){
+                  count1++;
+               }else{
+                  cout<<pId<<"INVALID loanAccountModulePurchased"<<endl;
+               }  
+            }
+            if(getline(ss1,customizations,'|'))
+            {
+               count1++;  
+            }
+
+            if(getline(ss1,extraLine,'|'))
+            {
+               count1++;  
+            }
+            if(count1==13)
+            {
+               banking *b = new banking;
+               *b = banking(pId, type, desc, clientName,  stDate, edDate,  profCenter,  priority, noOfEmp,noOfAllocated,currentAccountModulePurchased, loanAccountModulePurchased,customizations);
+               p= b;
+               P[pId]=p;
+            }
+            else
+            {
+               outfile1<<line1<<endl;  
+            }
+            
+      }
+      else 
+      {
+            if(getline(ss1,extraLine,'|'))
+            {
+               count1++;  
+            }
+            if ((count1 ==10))
+         {
+            Project *p2 = new Project;
+            *p2 = Project(pId,type,desc, clientName,  stDate,  edDate,  profCenter,  priority,  noOfEmp, noOfAllocated);
+            p=p2;
+            P[pId]=p;
+            }      
+            else
+            {
+               outfile1<<line1<<endl;
+            }
+               
+      }
+            
+      } // end of while line in file
+      outfile1.close();
+      input1.close();
+
+      return P;
+      
 
 }
 
@@ -511,7 +475,5 @@ int LoadFile(string Empfile , string projectFile,int sw)
     else if(sw == 8)
         updateProject(P);
                  
-        
-
-             return 0;
+   return 0;
 }

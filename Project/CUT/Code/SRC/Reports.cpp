@@ -12,12 +12,12 @@
 void listEmpGPid(map<string,Project *> P,map<string,Employee> E)
 {
     string pId;
-    cout<<"Enter project ID"<<endl;
+    cout<<"Enter project ID : "<<endl;
     cin>>pId;
 
     map<string,Project *>::iterator itr1 = P.find(pId);
     if(itr1 == P.end())
-        cout << "Project is not present" ;
+        cout << "PROJECT IS NOT PRESENT" ;
     else
     {   
         map<string,Employee>::iterator itr;
@@ -50,7 +50,7 @@ void listProjectGEid(map<string,Project *> P,map<string,Employee> E){
     
     map<string,Employee>::iterator itr = E.find(eId);
     if(itr == E.end())
-        cout << "Project is not present" ;
+        cout << "EMPLOYEE IS NOT PRESENT" ;
     else
     {   
         if(itr->second.getAp1()!="0"){
@@ -83,7 +83,7 @@ void listProjectGPC(map<string,Project *> P){
     for(itr = P.begin(); itr != P.end(); itr++) 
     {        
     if(itr->second->getPriority()=="1" && date_cmp(itr->second->getedDate())==1){ 
-        cout<<"\nProject ID: " << itr->first<<endl ;
+        cout<<"\nPROJECT ID: " << itr->first<<endl ;
     cout <<'\n';    
     }
     }
@@ -128,17 +128,18 @@ void listEmpGAoe(map<string,Employee> E){
 
 void menuReports(){
    int choice;
-   map<string,Project *> P=  loadProject("../data/project.txt");
-   map<string,Employee> E = loadEmployee("../data/employee.txt");
-    do{
-
-        cout<<"(1) Generate List of employees assigned to project with given project ID: "<<endl;
-        cout<<"(2) Generate List of project to which employee with given Emp ID is allocated: "<<endl;
-        cout<<"(3) Generate List of priority 1 project which are “in-progress”: "<<endl;
-        cout<<"(4) Generate List of employees having given “area of expertise”: "<<endl;
+   map<string,Project *> P=  loadProject(PRJPATH);
+   map<string,Employee> E = loadEmployee(EMPPATH);
+    do
+    {
+        cout<<" 1. GENERATE LIST OF EMPLOYEES ASSIGNED TO PROJECT WITH GIVEN PROJECT ID "<<endl;
+        cout<<" 2. GENERATE LIST OF PROJECT PROJECT TO WHICH EMPLOYEE WITH GIVEN EMPLOYEE ID IS ALLOCATED: "<<endl;
+        cout<<" 3. GENERATE LIST OF PRIORITY 1 PROJECT WHICH ARE “IN-PROGRESS”: "<<endl;
+        cout<<" 4. GENERATE LIST OF EMPLOYEES HAVING GIVEN “AREA OF EXPERTISE”: "<<endl;
+        cout<<" 5. EXIT TO THE MAIN MENU"<<endl;
         
-            cout<<"ENTER THE CHOICE: "<<endl;
-            cin>>choice;
+        cout<<"ENTER THE CHOICE: ";
+        cin>>choice;
 
 
         switch(choice)
@@ -158,8 +159,6 @@ void menuReports(){
             case 4: 
                 listEmpGAoe(E);
                 break;
-
         }
-
-    }while(choice<5);
+    }while(choice!=5);
 }

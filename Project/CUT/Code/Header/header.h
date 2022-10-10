@@ -14,8 +14,16 @@ using namespace std;
 #include<ctype.h>
 #include<algorithm>
 #include<regex>
-#include"../src/date.h"
+#include"date.h"
 //change date.h directory 
+#define SUCCESS 1
+#define FAILURE 0
+#define EMPPATH "../data/Employee.txt"
+#define PRJPATH "../data/Project.txt"
+#define ERREMPLOYEE "../data/errEmpName.txt"
+#define ERRPROJECT "../data/errProjectName.txt"
+#define STATEMPLOYEE "../data/stat.txt"
+#define STATPROJECT "../data/stat1.txt"
 
 void addEmp();
 void  addProject();
