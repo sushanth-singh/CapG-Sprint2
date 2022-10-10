@@ -32,5 +32,8 @@ Read complete [SRS](Project/SRS/SRS_DefectProgrammer.pdf) Document here.
 ## Contributors:
 - [Singuluri Sai Vamsee Krishna](https://github.com/ssvk053)
 - [Sushanth](https://github.com/sushanth-singh)
+- [Kalyani](https://github.com/kalyani22-max)
+- [Hitesh](https://github.com/HiteshSonawane)
+- [Nithish](https://github.com/mygitnithish)
 
 
