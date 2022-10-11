@@ -30,3 +30,7 @@ validation.o: ../src/validation.cpp
 
 reports.o: ../src/reports.cpp
 	g++ -o  ../obj/reports.o -c ../src/reports.cpp
+	
+clean:
+	rm ../obj/*-o ../bin/*.exe
+	echo "Cleaning all file..."
