@@ -4,8 +4,8 @@ Menu-drive application human resource management to manage employees, projects a
 Read complete [SRS](Project/SRS/SRS_DefectProgrammer.pdf) Document here.
 
 ## Directory Structure
-1. [Project](https://github.com/sushanth-singh/CapG-Sprint2-HumanResourceManagement/tree/main/Project)): Main Project folder.
-   1. [Cut](Project/CUT/)
+1. [Project](https://github.com/sushanth-singh/CapG-Sprint2-HumanResourceManagement/tree/main/Project): Main Project folder.
+   1. [Cut]([Project/CUT/])
       1. [Code](Project/CUT/Code/)
          1. [Bin](Project/CUT/Code/bin/): Contains executable file.
          2. [Data](Project/CUT/Code/data/): Contains input data file.   
