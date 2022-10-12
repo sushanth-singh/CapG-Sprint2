@@ -18,5 +18,5 @@
 1019|jahanavi|katula|8526479862|4578963254|Machine learning|3 year|B.Tech|phyton|0|0|0|
 1020|harsha|majji|8526479862|4578963254|software|2 year|B.Tech|cpp|0|0|0|
 1023|Tarak|ramarao|1234567899|1123456789|software|3 year|Phd|phyton|0|0|0|
-1024|raja|ss|2345678912|1234567899|software|5 years|phd|java|0|0|0|
-1025|Kalyani|Patil|1234567890|2345678904|IT|2months|be|CPP|0|0|0|
+
+
