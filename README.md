@@ -7,7 +7,7 @@ Read complete [SRS](https://github.com/sushanth-singh/CapG-Sprint2-HumanResource
 1. [Project](https://github.com/sushanth-singh/CapG-Sprint2-HumanResourceManagement/tree/main/Project): Main Project folder.
    1. [Cut](https://github.com/sushanth-singh/CapG-Sprint2-HumanResourceManagement/tree/main/Project/CUT)
       1. [Code](https://github.com/sushanth-singh/CapG-Sprint2-HumanResourceManagement/tree/main/Project/CUT/code)
-         1. [Bin]https://github.com/sushanth-singh/CapG-Sprint2-HumanResourceManagement/tree/main/Project/CUT/code/bin): Contains executable file.
+         1. [Bin](https://github.com/sushanth-singh/CapG-Sprint2-HumanResourceManagement/tree/main/Project/CUT/code/bin): Contains executable file.
          2. [Data](https://github.com/sushanth-singh/CapG-Sprint2-HumanResourceManagement/tree/main/Project/CUT/code/data): Contains input data file.   
          3. [Header](https://github.com/sushanth-singh/CapG-Sprint2-HumanResourceManagement/tree/main/Project/CUT/code/header): Contains all header files.
          4. [Make](https://github.com/sushanth-singh/CapG-Sprint2-HumanResourceManagement/tree/main/Project/CUT/code/make): Contains Makefile.
