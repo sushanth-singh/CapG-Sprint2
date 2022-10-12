@@ -1,4 +1,22 @@
-1001|Hitesh|singh|8526479862|4578963254|5G Commnications|1 year|B.Tech|C and Cpp|0|0|0|
-1002|Rohit|swami|1234567890|9876543210|5G connectivity|1 year|B.Tech|C and Cpp|P002|0|0|
-1003|Rohit|Swami|9876543210|1234567890|AWS office|2 years|B.tech|C and Cpp|0|0|0|
-1004|Vamsee|Sai|9876543210|8976543210|5G connectivity|2 years|B.Tech|C and Cpp|0|0|0|
+1001|Nithish|Chilakala|8526479862|4578963254|5G Commnications|1 year|B.Tech|cpp|P007|P008|P002|
+1002|Hitesh|Sonawane|9626786862|4578963254|AI|2 year|B.Tech|java|P007|P002|P009|
+1003|Vamsee|Singuluri|8526479862|4578963254|software|1 year|B.Tech|phyton|P007|P008|0|
+1004|kalyani|Sonawane|8526479862|4578963254|Machine learning|3 year|M.Tech|java|P007|P002|0|
+1005|susanth|singh|8526479862|4578963254|Internet of things|5 year|B.Tech|java|P007|P002|0|
+1006|varun|rajput|8526479862|4578963254|AI|2 year|B.Tech|java|P004|P004|0|
+1007|Raja|Chola|8526479862|4578963254|software|4 year|M.Tech|swift|P002|P004|0|
+1008|ompa|Chilakala|8526479862|4578963254|cloud|1 year|B.Tech|java|P002|P004|0|
+1009|kiran|singh|8526479862|4578963254|5G Commnications|1 year|B.Tech|cpp|0|0|0|
+1011|peter|Sonawale|8526479862|4578963254|cloud|3 year|M.Tech|phyton|0|0|0|
+1012|lily|Chawala|8526479862|4578963254|Internet of things|2 year|B.Tech|java|P011|0|0|
+1013|Nikil|modi|8526479862|4578963254|software|1 year|B.Tech|cpp|0|0|0|
+1014|mayur|kasa|8526479862|4578963254|AI|1 year|B.Tech|phyton|0|0|0|
+1015|rohit|mada|8526479862|4578963254|Machine learning|1 year|B.Tech|cpp|0|0|0|
+1016|sachin|ajmera|8526479862|4578963254|5G Commnications|5 year|phd|java|0|0|0|
+1017|rishabh|lingam|8526479862|4578963254|software|1 year|B.Tech|cpp|P008|0|0|
+1018|krishna|suddapali|8526479862|4578963254| AI|5 year|B.Tech|java|0|0|0|
+1019|jahanavi|katula|8526479862|4578963254|Machine learning|3 year|B.Tech|phyton|0|0|0|
+1020|harsha|majji|8526479862|4578963254|software|2 year|B.Tech|cpp|0|0|0|
+1023|Tarak|ramarao|1234567899|1123456789|software|3 year|Phd|phyton|0|0|0|
+1024|raja|ss|2345678912|1234567899|software|5 years|phd|java|0|0|0|
+1025|Kalyani|Patil|1234567890|2345678904|IT|2months|be|CPP|0|0|0|
