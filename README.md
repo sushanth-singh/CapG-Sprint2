@@ -28,9 +28,9 @@ Read complete [SRS](https://github.com/sushanth-singh/CapG-Sprint2-HumanResource
 
 ## Contributors:
 - [Singuluri Sai Vamsee Krishna](https://github.com/ssvk053)
-- [Sushanth](https://github.com/sushanth-singh)
-- [Kalyani](https://github.com/kalyani22-max)
-- [Hitesh](https://github.com/HiteshSonawane)
-- [Nithish](https://github.com/mygitnithish)
+- [Sushanth Singh Thakur](https://github.com/sushanth-singh)
+- [Kalyani Gopichand Sonawane](https://github.com/kalyani22-max)
+- [Hitesh Dharma Sonawane](https://github.com/HiteshSonawane)
+- [Chilakala Nithish Kumar](https://github.com/mygitnithish)
 
 
