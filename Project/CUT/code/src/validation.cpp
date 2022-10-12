@@ -1,4 +1,4 @@
-#include"../header/header.h"
+#include <../header/header.h>
 
 
 /********************************************
@@ -100,7 +100,6 @@ int date_cmp(string str){
     tm *itm = localtime(&now);
      
     DATE cur(itm->tm_mday,itm->tm_mon+1,1900+itm->tm_year);
-    //cur.dateDisplay();
     string dd2,mm2,yy2;
     int dd1,mm1,yy1;
     stringstream ss(str);
@@ -116,21 +115,47 @@ int date_cmp(string str){
     DATE prjDate(dd1,mm1,yy1);
     
     if((cur<prjDate)==1){
-        //cout<<"CUR DATE IS LESS"<<endl;
         return 1;
-    }else if((cur<prjDate)==-1){
-        //cout<<"CUR DATE IS GREAT"<<endl;
+    }else if((cur<prjDate)==-1){        
         return -1;
-    }
-    // }else if((cur<prjDate)==0){
-    //     //cout<<"SAME"<<endl;
-
-    //     return 0;
-    // }
+    }    
     return 0;
 }
 
-//string is in date format or not and check day date and year accordingly 
+
+int stDate_edDate(string str1,string str2){
+    string dd2,mm2,yy2;
+    int dd1,mm1,yy1;
+    stringstream ss(str1);
+    if(getline(ss,dd2,'/')){
+        dd1=stoi(dd2);
+    }
+    if(getline(ss,mm2,'/')){
+       mm1=stoi(mm2);
+    }
+    if(getline(ss,yy2,'/')){
+       yy1=stoi(yy2);
+    }
+    DATE startDate(dd1,mm1,yy1);
+
+    stringstream ss1(str2);
+    if(getline(ss1,dd2,'/')){
+        dd1=stoi(dd2);
+    }
+    if(getline(ss1,mm2,'/')){
+       mm1=stoi(mm2);
+    }
+    if(getline(ss1,yy2,'/')){
+       yy1=stoi(yy2);
+    }
+    DATE endDate(dd1,mm1,yy1);
+
+    if(startDate<endDate){
+        return 1;
+    }
+    return 0;
+}
+
 
 
 /********************************************

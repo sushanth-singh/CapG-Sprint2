@@ -1,36 +1,96 @@
-hr: hrproject.o saveFile.o deallocate.o allocate.o updateFile.o  deleteFile.o addFile.o loadFile.o reports.o validation.o
-	g++ -o  ../bin/hr ../obj/hrproject.o ../obj/saveFile.o ../obj/deallocate.o ../obj/allocate.o ../obj/updateFile.o  ../obj/deleteFile.o ../obj/addFile.o ../obj/loadFile.o ../obj/reports.o  ../obj/validation.o
+GCC = g++
+CFLAG =	-c
+OFLAG = -o
+INC = ../header
+IFLAG = -I $(INC)
 
-hrproject.o: ../src/hrproject.cpp 
-	g++ -o  ../obj/hrproject.o -c ../src/hrproject.cpp
+SRC = ../src
+BIN = ../bin
+OBJ = ../obj
 
-saveFile.o: ../src/saveFile.cpp
-	g++ -o  ../obj/saveFile.o -c ../src/saveFile.cpp
+SRCHRPROG = $(SRC)/hrproject.cpp
+GCCHRPROG = $(GCC) $(OFLAG)  $(OBJ)/hrproject.o $(CFLAG) $(IFLAG) $(SRCHRPROG)
 
-deallocate.o: ../src/deAllocate.cpp
-	g++ -o  ../obj/deallocate.o -c ../src/deAllocate.cpp
+SRCSAVEFILE = $(SRC)/saveFile.cpp
+GCCSAVEFILE = $(GCC) $(OFLAG)  $(OBJ)/saveFile.o $(CFLAG) $(IFLAG) $(SRCSAVEFILE)
 
-allocate.o: ../src/allocate.cpp
-	g++ -o  ../obj/allocate.o -c ../src/allocate.cpp
+SRCDEALLOCATE = $(SRC)/deAllocate.cpp
+GCCDEALLOCATE = $(GCC) $(OFLAG)  $(OBJ)/deAllocate.o $(CFLAG) $(IFLAG) $(SRCDEALLOCATE)
 
-updateFile.o: ../src/updateFile.cpp
-	g++ -o  ../obj/updateFile.o -c ../src/updateFile.cpp
+SRCALLOCATE = $(SRC)/allocate.cpp
+GCCALLOCATE = $(GCC) $(OFLAG)  $(OBJ)/allocate.o $(CFLAG) $(IFLAG) $(SRCALLOCATE)
 
-deleteFile.o: ../src/deleteFile.cpp 
-	g++ -o  ../obj/deleteFile.o -c ../src/deleteFile.cpp
+SRCUPDATE = $(SRC)/updateFile.cpp
+GCCUPDATE = $(GCC) $(OFLAG)  $(OBJ)/updateFile.o $(CFLAG) $(IFLAG) $(SRCUPDATE)
 
-addFile.o: ../src/addFile.cpp 
-	g++ -o  ../obj/addFile.o -c ../src/addFile.cpp
+SRCDELETE = $(SRC)/deleteFile.cpp
+GCCDELETE = $(GCC) $(OFLAG)  $(OBJ)/deleteFile.o $(CFLAG) $(IFLAG) $(SRCDELETE)
 
-loadFile.o: ../src/loadFile.cpp
-	g++ -o  ../obj/loadFile.o -c ../src/loadFile.cpp
+SRCADDFILE = $(SRC)/addFile.cpp 
+GCCADDFILE = $(GCC) $(OFLAG)  $(OBJ)/addFile.o $(CFLAG) $(IFLAG) $(SRCADDFILE)
 
-validation.o: ../src/validation.cpp
-	g++ -o  ../obj/validation.o -c ../src/validation.cpp
+SRCLOADFILE = $(SRC)/loadFile.cpp
+GCCLOADFILE = $(GCC) $(OFLAG)  $(OBJ)/loadFile.o $(CFLAG) $(IFLAG) $(SRCLOADFILE)
 
-reports.o: ../src/reports.cpp
-	g++ -o  ../obj/reports.o -c ../src/reports.cpp
-	
+SRCVALIDATION = $(SRC)/validation.cpp
+GCCVALIDATION = $(GCC) $(OFLAG)  $(OBJ)/validation.o $(CFLAG) $(IFLAG) $(SRCVALIDATION)
+
+SRCREPORTS = $(SRC)/reports.cpp
+GCCREPORTS = $(GCC) $(OFLAG)  $(OBJ)/reports.o $(CFLAG) $(IFLAG) $(SRCREPORTS)
+
+SRCEMPLOYEE = $(SRC)/employee.cpp
+GCCEMPLOYEE = $(GCC) $(OFLAG)  $(OBJ)/employee.o $(CFLAG) $(IFLAG) $(SRCEMPLOYEE)
+
+SRCPROJECT = $(SRC)/project.cpp
+GCCPROJECT = $(GCC) $(OFLAG)  $(OBJ)/project.o $(CFLAG) $(IFLAG) $(SRCPROJECT)
+
+SRCDATE = $(SRC)/date.cpp
+GCCDATE = $(GCC) $(OFLAG)  $(OBJ)/date.o $(CFLAG) $(IFLAG) $(SRCDATE)
+
+OBJHR = hrproject.o saveFile.o deallocate.o allocate.o updateFile.o  deleteFile.o addFile.o loadFile.o reports.o validation.o employee.o project.o date.o
+GCCHR = $(GCC) $(OFLAG)  $(BIN)/hr $(OBJ)/hrproject.o $(OBJ)/saveFile.o $(OBJ)/deallocate.o $(OBJ)/allocate.o $(OBJ)/updateFile.o  $(OBJ)/deleteFile.o $(OBJ)/addFile.o $(OBJ)/loadFile.o $(OBJ)/validation.o $(OBJ)/reports.o $(OBJ)/employee.o $(OBJ)/project.o $(OBJ)/date.o
+
+hr: $(OBJHR)
+	$(GCCHR)
+
+hrproject.o: $(SRCHRPROG)
+	$(GCCHRPROG)
+
+saveFile.o: $(SRCSAVEFILE)
+	$(GCCSAVEFILE)
+
+deallocate.o: $(SRCDEALLOCATE)
+	$(GCCDEALLOCATE)
+
+allocate.o: $(SRCALLOCATE)
+	$(GCCALLOCATE)
+
+updateFile.o: $(SRCUPDATE)
+	$(GCCUPDATE)
+
+deleteFile.o: $(SRCDELETE)
+	$(GCCDELETE)
+
+addFile.o: $(SRCADDFILE)
+	$(GCCADDFILE)
+
+loadFile.o: $(SRCLOADFILE)
+	$(GCCLOADFILE)
+
+validation.o: $(SRCVALIDATION)
+	$(GCCVALIDATION)
+
+reports.o: $(SRCREPORTS)
+	$(GCCREPORTS)
+
+employee.o: $(SRCEMPLOYEE)
+	$(GCCEMPLOYEE)
+
+project.o: $(SRCPROJECT)
+	$(GCCPROJECT)
+
+date.o: $(SRCDATE)
+	$(GCCDATE)
+
 clean:
-	rm ../obj/*-o ../bin/*.exe
-	echo "Cleaning all file..."
+	rm $(BIN)/hr $(OBJ)/*.o

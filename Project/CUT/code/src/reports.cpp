@@ -1,4 +1,4 @@
-#include "../header/header.h"
+#include <../header/header.h>
 
 /********************************************
  * *FUNCTION NAME : listEmpGPid() 
@@ -12,12 +12,12 @@
 void listEmpGPid(map<string,Project *> P,map<string,Employee> E)
 {
     string pId;
-    cout<<"Enter project ID : "<<endl;
+    cout<<"ENTER THE PROJECT ID: ";
     cin>>pId;
 
     map<string,Project *>::iterator itr1 = P.find(pId);
     if(itr1 == P.end())
-        cout << "PROJECT IS NOT PRESENT" ;
+        cout << "PROJECT IS NOT PRESENT"<<endl;
     else
     {   
         map<string,Employee>::iterator itr;
@@ -25,8 +25,9 @@ void listEmpGPid(map<string,Project *> P,map<string,Employee> E)
         {        
             if(itr->second.searchAssignedProject(pId))
             {
+                cout<<"------------------------------------------------------"<<endl;
                 cout<<"\nEMPLOYEE ID: " << itr->first<<endl ;
-                cout <<'\n';    
+                cout<<"------------------------------------------------------"<<endl;    
             }
         }
     }
@@ -44,15 +45,16 @@ void listEmpGPid(map<string,Project *> P,map<string,Employee> E)
 *********************************************/
 void listProjectGEid(map<string,Project *> P,map<string,Employee> E){
     string eId;
-    cout<<"Enter Employee ID"<<endl;
+    cout<<"ENTER THE EMPLOYEE ID: ";
     cin>>eId;
 
     
     map<string,Employee>::iterator itr = E.find(eId);
     if(itr == E.end())
-        cout << "EMPLOYEE IS NOT PRESENT" ;
+        cout << "EMPLOYEE IS NOT PRESENT"<<endl ;
     else
     {   
+        cout<<"------------------------------------------------------"<<endl;
         if(itr->second.getAp1()!="0"){
             cout<<"\nPROJECT ID OF PROJECT 1: "<<itr->second.getAp1()<<endl;
         }
@@ -64,6 +66,7 @@ void listProjectGEid(map<string,Project *> P,map<string,Employee> E){
         if(itr->second.getAp3()!="0"){
             cout<<"\nPROJECT ID OF PROJECT 3: "<<itr->second.getAp3()<<endl;
         }
+        cout<<"------------------------------------------------------"<<endl;
     }
 
 }
@@ -83,8 +86,9 @@ void listProjectGPC(map<string,Project *> P){
     for(itr = P.begin(); itr != P.end(); itr++) 
     {        
     if(itr->second->getPriority()=="1" && date_cmp(itr->second->getedDate())==1){ 
+        cout<<"------------------------------------------------------"<<endl;
         cout<<"\nPROJECT ID: " << itr->first<<endl ;
-    cout <<'\n';    
+        cout<<"------------------------------------------------------"<<endl;    
     }
     }
 }
@@ -101,7 +105,7 @@ void listProjectGPC(map<string,Project *> P){
 *********************************************/
 void listEmpGAoe(map<string,Employee> E){
     string expertise;
-    cout<<"ENTER THE AREA OF EXPERTISE: "<<endl;
+    cout<<"ENTER THE AREA OF EXPERTISE: ";
     getchar();
     getline(cin,expertise);
 
@@ -109,8 +113,9 @@ void listEmpGAoe(map<string,Employee> E){
     for(itr = E.begin(); itr != E.end(); itr++) 
     {        
         if(itr->second.getAreaOfExpertise()==expertise){
+            cout<<"------------------------------------------------------"<<endl;
             cout<<"\nEMPLOYEE ID: " << itr->first<<endl ;
-            cout <<'\n';    
+            cout<<"------------------------------------------------------"<<endl;   
         }
     }
 }
@@ -132,15 +137,16 @@ void menuReports(){
    map<string,Employee> E = loadEmployee(EMPPATH);
     do
     {
-        cout<<" 1. GENERATE LIST OF EMPLOYEES ASSIGNED TO PROJECT WITH GIVEN PROJECT ID "<<endl;
-        cout<<" 2. GENERATE LIST OF PROJECT PROJECT TO WHICH EMPLOYEE WITH GIVEN EMPLOYEE ID IS ALLOCATED: "<<endl;
-        cout<<" 3. GENERATE LIST OF PRIORITY 1 PROJECT WHICH ARE “IN-PROGRESS”: "<<endl;
-        cout<<" 4. GENERATE LIST OF EMPLOYEES HAVING GIVEN “AREA OF EXPERTISE”: "<<endl;
+        cout<<"....................DISPLAY REPORTS MENU...................."<<endl;
+        cout<<"\n 1. DISPLAY LIST OF EMPLOYEES ASSIGNED TO PROJECT WITH GIVEN PROJECT ID "<<endl;
+        cout<<" 2. DISPLAY LIST OF PROJECT TO WHICH EMPLOYEE WITH GIVEN EMPLOYEE ID IS ALLOCATED "<<endl;
+        cout<<" 3. DISPLAY LIST OF PRIORITY 1 PROJECT WHICH ARE “IN-PROGRESS” "<<endl;
+        cout<<" 4. DISPLAY LIST OF EMPLOYEES HAVING GIVEN “AREA OF EXPERTISE” "<<endl;
         cout<<" 5. EXIT TO THE MAIN MENU"<<endl;
-        
+        cout<<"..................................................."<<endl;
         cout<<"ENTER THE CHOICE: ";
         cin>>choice;
-
+        cout<<"..................................................."<<endl;
 
         switch(choice)
         {

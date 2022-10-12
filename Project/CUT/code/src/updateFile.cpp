@@ -1,4 +1,4 @@
-#include "../header/header.h"
+#include <../header/header.h>
 
 
 /********************************************
@@ -32,14 +32,14 @@ void updateEmp(map<string,Employee> &E)
         do
         {  
             cout<<"....................UPDATE EMPLOYEE MENU...................."<<endl;
-            cout<<"\n 1. ADD FIRST NAME "<<endl;
-            cout<<" 2. ADD LAST NAME "<<endl;
-            cout<<" 3. Add PHONE NUMBER 1 "<<endl;
-            cout<<" 4. Add PHONE NUMBER 2 "<<endl;
-            cout<<" 5. Add BUSINESS UNIT "<<endl;
-            cout<<" 6. Add PRACTICE "<<endl;
-            cout<<" 7. Add QUALIFICATION "<<endl;
-            cout<<" 8. Add AREA OF EXPERTISE"<<endl;
+            cout<<"\n 1. UPDATE FIRST NAME: "<<itr->second.getFirstName()<<endl;
+            cout<<" 2. UPDATE LAST NAME: "<<itr->second.getLastName()<<endl;
+            cout<<" 3. UPDATE PHONE NUMBER 1: "<<itr->second.getPhone1()<<endl;
+            cout<<" 4. UPDATE PHONE NUMBER 2: "<<itr->second.getPhone2()<<endl;
+            cout<<" 5. UPDATE BUSINESS UNIT: "<<itr->second.getBu()<<endl;
+            cout<<" 6. UPDATE PRACTICE: "<<itr->second.getPractice()<<endl;
+            cout<<" 7. UPDATE QUALIFICATION: "<<itr->second.getQualification()<<endl;
+            cout<<" 8. UPDATE AREA OF EXPERTISE: "<<itr->second.getAreaOfExpertise()<<endl;
             cout<<" 9. EXIT TO MAIN MENU"<<endl;
             cout<<"..................................................."<<endl;
             cout<<" ENTER THE CHOICE: "<<endl;
@@ -62,7 +62,7 @@ void updateEmp(map<string,Employee> &E)
                                 break;
                             }
                             else
-                                throw(1);
+                                throw(EXCEPTION);
                         }
                         catch(int a){
                             cout<<"INVALID FIRST NAME "<<endl;
@@ -87,7 +87,7 @@ void updateEmp(map<string,Employee> &E)
                                 break;
                             }
                             else
-                                throw(1);
+                                throw(EXCEPTION);
                         }
                         catch(int a){
                             cout<<"INVALID LAST NAME "<<endl;
@@ -113,7 +113,7 @@ void updateEmp(map<string,Employee> &E)
                                 break;
                             }
                             else
-                                throw(1);
+                                throw(EXCEPTION);
                         }
                         catch(int a){
                             cout<<"INVALID PHONE NUMBER "<<endl;
@@ -139,7 +139,7 @@ void updateEmp(map<string,Employee> &E)
                                 break;
                             }
                             else
-                                throw(1);
+                                throw(EXCEPTION);
                         }
                         catch(int a){
                             cout<<"INVALID PHONE NUMBER 2 "<<endl;
@@ -164,7 +164,7 @@ void updateEmp(map<string,Employee> &E)
                                 break;
                             }
                             else
-                                throw(1);
+                                throw(EXCEPTION);
                         }
                         catch(int a){
                             cout<<"INVALID BUSINESS UNIT "<<endl;
@@ -189,7 +189,7 @@ void updateEmp(map<string,Employee> &E)
                                 break;
                             }
                             else
-                                throw(1);
+                                throw(EXCEPTION);
                         }
                         catch(int a){
                             cout<<"INVALID PRACTICE "<<endl;
@@ -214,7 +214,7 @@ void updateEmp(map<string,Employee> &E)
                                 break;
                             }
                             else
-                                throw(1);
+                                throw(EXCEPTION);
                         }
                         catch(int a){
                             cout<<"INVALID QUALIFICATION "<<endl;
@@ -239,7 +239,7 @@ void updateEmp(map<string,Employee> &E)
                                 break;
                             }
                             else
-                                throw(1);
+                                throw(EXCEPTION);
                         }
                         catch(int a){
                             cout<<"INVALID AREA OF EXPERTISE "<<endl;
@@ -267,7 +267,7 @@ void updateEmp(map<string,Employee> &E)
 *********************************************/
 void updateProject(map<string,Project *> &P)
 {
-    cout<<"ENTER PROJECT  ID";
+    cout<<"ENTER PROJECT  ID:";
     string pId;
     cin>>pId;
     int ch1;
@@ -297,7 +297,7 @@ void updateProject(map<string,Project *> &P)
                 cout<<" 10. ADD TELECOM STANDARDS"<<endl;
                 cout<<" 11. EXIT TO MAIN MENU"<<endl;
                 cout<<"..................................................."<<endl;
-                cout<<"ENTER THE CHOICE: ";
+                cout<<"ENTER THE CHOICE:";
                 cin>>ch1;
                 cout<<"..................................................."<<endl;
 
@@ -319,7 +319,7 @@ void updateProject(map<string,Project *> &P)
                                 break;
                             }
                             else
-                                throw(1);
+                                throw(EXCEPTION);
                             }
                             catch(int a)
                             {
@@ -347,7 +347,7 @@ void updateProject(map<string,Project *> &P)
                                     break;
                                 }
                                 else
-                                    throw(1);
+                                    throw(EXCEPTION);
                             }
                             catch(int a)
                             {
@@ -375,12 +375,12 @@ void updateProject(map<string,Project *> &P)
                                     break;
                                 }
                                 else
-                                    throw(1);
+                                    throw(EXCEPTION);
                             }
                             catch(int a)
                             {
                                 cout<<"INVALID START DATE "<<endl;
-                                cout<<"ENTER VALID START DATE AGAIN"<<endl;
+                                cout<<"ENTER VALID START DATE AGAIN AGAIN IN DD/MM/YYYY FROMAT"<<endl;
                             }
                         }while(1);
                     }
@@ -395,17 +395,17 @@ void updateProject(map<string,Project *> &P)
                             getchar();
                             getline(cin,ed);
                             try{
-                                if(validDate(ed)){
+                                if(validDate(ed) && stDate_edDate(tpr->getstDate(),ed)==1){
                                     tpr->setedDate(ed);
                                     cout<<"PROJECT END DATE IS SUCCESSFULLY UPDATED"<<endl;
                                     break;
                                 }
                                 else
-                                    throw(1);
+                                    throw(EXCEPTION);
                             }
                             catch(int a){
                                 cout<<"INVALID END DATE "<<endl;
-                                cout<<"ENTER VALID END DATE AGAIN"<<endl;
+                                cout<<"ENTER VALID END DATE AGAIN IN DD/MM/YYYY FROMAT AND IT MUST BE GREATER THAN START DATE"<<endl;
                             }
                         }while(1);
                 
@@ -437,7 +437,7 @@ void updateProject(map<string,Project *> &P)
                                     break;
                                 }
                                 else
-                                    throw(1);
+                                    throw(EXCEPTION);
                             }
                             catch(int a){
                                 cout<<"INVALID PRIORITY "<<endl;
@@ -477,7 +477,7 @@ void updateProject(map<string,Project *> &P)
                                     break;
                                 }
                                 else
-                                    throw(1);
+                                    throw(EXCEPTION);
                             }
                             catch(int a){
                                 cout<<"INVALID INTERNET PROVIDER "<<endl;
@@ -504,7 +504,7 @@ void updateProject(map<string,Project *> &P)
                                     break;
                                 }
                                 else
-                                    throw(1);
+                                    throw(EXCEPTION);
                             }
                             catch(int a){
                                 cout<<"INVALID SATELLITE "<<endl;
@@ -532,7 +532,7 @@ void updateProject(map<string,Project *> &P)
                                     break;
                                 }
                                 else
-                                    throw(1);
+                                    throw(EXCEPTION);
                             }
                             catch(int a){
                                 cout<<"INVALID TELECOM STANDARD "<<endl;
@@ -587,7 +587,7 @@ void updateProject(map<string,Project *> &P)
                                     break;
                                 }
                                 else
-                                    throw(1);
+                                    throw(EXCEPTION);
                             }
                             catch(int a)
                             {
@@ -613,7 +613,7 @@ void updateProject(map<string,Project *> &P)
                                     break;
                                 }
                                 else
-                                    throw(1);
+                                    throw(EXCEPTION);
                             }
                             catch(int a){
                                 cout<<"INVALID CLIENT NAME "<<endl;
@@ -640,7 +640,7 @@ void updateProject(map<string,Project *> &P)
                                     break;
                                 }
                                 else
-                                    throw(1);
+                                    throw(EXCEPTION);
                             }
                             catch(int a){
                                 cout<<"INVALID STRING "<<endl;
@@ -661,17 +661,17 @@ void updateProject(map<string,Project *> &P)
                             getchar();
                             getline(cin,ed);
                             try{
-                                if(validDate(ed)){
+                                if(validDate(ed) && stDate_edDate(bpr->getstDate(),ed)==1){
                                     bpr->setedDate(ed);
                                     cout<<"PROJECT END DATE IS SUCCESSFULLY UPDATED"<<endl;
                                     break;
                                 }
                                 else
-                                    throw(1);
+                                    throw(EXCEPTION);
                             }
                             catch(int a){
                                 cout<<"INVALID END DATE "<<endl;
-                                cout<<"ENTER VALID END DATE AGAIN"<<endl;
+                                cout<<"ENTER VALID END DATE AGAIN IN DD/MM/YYYY FROMAT AND IT MUST BE GREATER THAN START DATE"<<endl;
                             }
                         }while(1);
                         
@@ -704,7 +704,7 @@ void updateProject(map<string,Project *> &P)
                                     break;
                                 }
                                 else
-                                    throw(1);
+                                    throw(EXCEPTION);
                             }
                             catch(int a){
                                 cout<<"INVALID PRIORITY "<<endl;
@@ -742,7 +742,7 @@ void updateProject(map<string,Project *> &P)
                                     break;
                                 }
                                 else
-                                    throw(1);
+                                    throw(EXCEPTION);
                             }
                             catch(int a){
                                 cout<<"INVALID CURRENT ACCOUNT MODULE PURCHASED "<<endl;
@@ -767,7 +767,7 @@ void updateProject(map<string,Project *> &P)
                                     break;
                                 }
                                 else
-                                    throw(1);
+                                    throw(EXCEPTION);
                             }
                             catch(int a){
                                 cout<<"INVALID LOAN ACCOUNT MODULE PURCHASED "<<endl;
@@ -793,7 +793,7 @@ void updateProject(map<string,Project *> &P)
                                     break;
                                 }
                                 else
-                                    throw(1);
+                                    throw(EXCEPTION);
                             }
                             catch(int a){
                                 cout<<"INVALID CUSTOMIZATION "<<endl;
@@ -840,7 +840,7 @@ void updateProject(map<string,Project *> &P)
                                         break;
                                     }
                                     else
-                                        throw(1);
+                                        throw(EXCEPTION);
                                 }
                                 catch(int a){
                                     cout<<"INVALID DESCRIPTION "<<endl;
@@ -866,7 +866,7 @@ void updateProject(map<string,Project *> &P)
                                         break;
                                     }
                                     else
-                                        throw(1);
+                                        throw(EXCEPTION);
                                 }
                                 catch(int a){
                                     cout<<"INVALID CLIENT NAME "<<endl;
@@ -892,7 +892,7 @@ void updateProject(map<string,Project *> &P)
                                         break;
                                     }
                                     else
-                                        throw(1);
+                                        throw(EXCEPTION);
                                 }
                                 catch(int a){
                                     cout<<"INVALID STRING "<<endl;
@@ -911,17 +911,17 @@ void updateProject(map<string,Project *> &P)
                                 
                                 getline(cin,ed);
                                 try{
-                                    if(validDate(ed)){
+                                    if(validDate(ed) && stDate_edDate(itr->second->getstDate(),ed)==1){
                                         if(date_cmp(ed)==1)
                                         itr->second->setedDate(ed);
                                        cout<<"PROJECT END DATE IS SUCCESSFULLY UPDATED"<<endl;
                                             break;                                
                                     }
-                                    throw(1);
+                                    throw(EXCEPTION);
                                 }
                                 catch(int a){
                                     cout<<"INVALID END DATE "<<endl;
-                                    cout<<"ENTER VALID END DATE AGAIN"<<endl;
+                                    cout<<"ENTER VALID END DATE AGAIN IN DD/MM/YYYY FROMAT AND IT MUST BE GREATER THAN START DATE"<<endl;
                                 }
                             }while(1);
                             
@@ -952,7 +952,7 @@ void updateProject(map<string,Project *> &P)
                                         break;
                                     }
                                     else
-                                        throw(1);
+                                        throw(EXCEPTION);
                                 }
                                 catch(int a){
                                     cout<<"INVALID PRIORITY "<<endl;

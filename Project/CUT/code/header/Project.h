@@ -1,3 +1,6 @@
+#ifndef PROJECT
+#define PROJECT
+
 #include<iostream>
 #include<string>
 #include<fstream>
@@ -5,17 +8,6 @@ using namespace std;
 
 class Project
 {
-    private:
-        string projId;//p001|telecom|
-        string type;
-        string desc;
-        string clientName;
-        string stDate;
-        string edDate;
-        string profCenter;
-        string priority;
-        int noOfEmp;
-        int noOfAllocated;
     public:
         Project(){};
         Project(string projId,string type,string desc, string clientName, string stDate, string edDate, string profCenter, string priority, int noOfEmp,int noOfAllocated)
@@ -34,155 +26,74 @@ class Project
             
         };
 
-        string getType()
-        {
-            return this->type;
-        }
-
-        string getdesc(){
-            return this->desc;
-        }
-
-        string getclientName(){
-            return this->clientName;
-        }
-
-        string getstDate(){
-            return this->stDate;
-        }
-
-        string getedDate(){
-            return this->edDate;
-        }
-        
-        string getprofCenter(){
-            return this->profCenter;
-        }
-
-         string getPriority(){
-            return this->priority;
-        }
-
-        int getNoOfEmp(){
-            return this->noOfEmp;
-        }
-        
-        int getNoOfAllocated(){
-            return this->noOfAllocated;
-        }
-
-               
-      string getprojId(){
-            return this->projId;
-        }
+        string getType();
+        string getdesc();
+        string getclientName();
+        string getstDate();
+        string getedDate();    
+        string getprofCenter();
+        string getPriority();
+        int    getNoOfEmp();
+        int    getNoOfAllocated();
+        string getprojId();
 
         //***********
-        void setType(string type)
-        {
-            this->type = type;
-        }
-        void setdesc(string desc){
-            this->desc=desc;
-        }
-       
-        void setclientName(string clientName){
-            this->clientName=clientName;
-        }
-
-        void setstDate(string stDate){
-            this->stDate=stDate;
-        }
-
-        void setedDate(string edDate){
-             this->edDate=edDate;
-        }
-        
-        void setprofCenter(string profCenter){
-            this->profCenter=profCenter;
-        }
-
-        void setPriority(string priority){
-            this->priority=priority;
-        }
-
-        void setNoOfEmp(int noOfEmp){
-            this->noOfEmp=noOfEmp;
-        }       
-
-        void setNoOfAllocated(int noOfAllocated){
-            this->noOfAllocated=noOfAllocated;
-        }       
+        void setType(string type);
+        void setdesc(string desc);
+        void setclientName(string clientName);
+        void setstDate(string stDate);
+        void setedDate(string edDate);
+        void setprofCenter(string profCenter);
+        void setPriority(string priority);
+        void setNoOfEmp(int noOfEmp);  
+        void setNoOfAllocated(int noOfAllocated);   
         
         //***********
 
-       virtual void display(){
-          
-            cout<<" Project Id: "<<this->projId;
-            cout<<" Project Type: "<<this->type;
-            cout<<" FIRST NAME: "<<this->desc;
-            cout<<" LAST NAME: "<<this->clientName;
-            cout<<" PHONE 1: "<<this->stDate;
-            cout<<" PHONE 2: "<<this->edDate;
-            cout<<" PROFIT CENTER:"<<this->profCenter;
-            cout<<" PRIORITY: "<<this->priority;
-            cout<<" NUMBER OF EMPLOYEES: "<<this->noOfEmp;
-            cout<<" NUMBER OF Allocated EMPLOYEES : "<<this->noOfAllocated<<endl;
-        }
+       virtual void display();
+
+       private:
+        string projId;//p001|telecom|
+        string type;
+        string desc;
+        string clientName;
+        string stDate;
+        string edDate;
+        string profCenter;
+        string priority;
+        int noOfEmp;
+        int noOfAllocated;
     
 };
 class telecom : public Project
 {
+    public :
+    telecom():Project(){}
+    telecom(string projId,string type,string desc,string clientName, string stDate, string edDate, string profCenter, string priority, int noOfEmp,int noOfAllocated,string internetProvider,string  satelliteLinks,string  telecomStandards):Project( projId,type,desc,clientName,stDate,  edDate,  profCenter,  priority, noOfEmp,noOfAllocated)
+    {
+        this->internetProvider = internetProvider;
+        this->satelliteLinks = satelliteLinks;
+        this->telecomStandards = telecomStandards;
+    }
+    void setInternetProvider(string internetProvider);
+    void setSatelliteLinks(string satelliteLinks);
+    void setTelecomStandards(string  telecomStandards);
+
+    //==================================================
+    string getInternetProvider();
+    string getSatelliteLinks();
+    string getTelecomStandards();
+    
+    void display();
+
+    private:
     string internetProvider;
     string  satelliteLinks;
     string  telecomStandards;
-    public :
-    telecom():Project(){}
-        telecom(string projId,string type,string desc,string clientName, string stDate, string edDate, string profCenter, string priority, int noOfEmp,int noOfAllocated,string internetProvider,string  satelliteLinks,string  telecomStandards):Project( projId,type,desc,clientName,stDate,  edDate,  profCenter,  priority, noOfEmp,noOfAllocated)
-        {
-            this->internetProvider = internetProvider;
-            this->satelliteLinks = satelliteLinks;
-            this->telecomStandards = telecomStandards;
-        }
-    void setInternetProvider(string internetProvider)
-    {
-        this->internetProvider = internetProvider;
-    }
-    void setSatelliteLinks(string satelliteLinks)
-    {
-       this->satelliteLinks = satelliteLinks; 
-    }
-    void setTelecomStandards(string  telecomStandards)
-    {
-       this->telecomStandards = telecomStandards; 
-    }
-
-    //==================================================
-    string getInternetProvider()
-    {
-        return  this->internetProvider;
-    }
-    string getSatelliteLinks()
-    {
-        return this->satelliteLinks;
-    }
-    string getTelecomStandards()
-    {
-        return this->telecomStandards;
-    }
-    void display(){
-         cout<<"teecom display"<<endl;
-            Project::display();
-            cout<<"\n:internetProvider"<<this->internetProvider<<endl;
-            cout<<"\n:satelliteLinks "<<this->satelliteLinks<<endl;
-            cout<<"\n:telecomStandards "<<this->telecomStandards<<endl;
-    }
 
 };
 class banking : public Project
 {
-    string currentAccountModulePurchased;
-    string loanAccountModulePurchased ;
-    string  customizations  ;
     public :
     banking():Project(){}
         banking(string projId,string type,string desc, string clientName, string stDate, string edDate, string profCenter, string priority, int noOfEmp,int noOfAllocated,string currentAccountModulePurchased,string loanAccountModulePurchased,string  customizations ):Project(projId,type, desc,clientName,stDate,  edDate,  profCenter,  priority, noOfEmp , noOfAllocated)
@@ -191,38 +102,22 @@ class banking : public Project
             this->loanAccountModulePurchased = loanAccountModulePurchased;
             this->customizations= customizations;
         }
-    void setCurrentAccountModulePurchased(string currentAccountModulePurchased)
-    {
-        this->currentAccountModulePurchased = currentAccountModulePurchased;
-    }
-    void setLoanAccountModulePurchased (string loanAccountModulePurchased )
-    {
-       this->loanAccountModulePurchased  = loanAccountModulePurchased ; 
-    }
-    void setCustomizations(string customizations )
-    {
-       this->customizations = customizations; 
-    }
-
+    void setCurrentAccountModulePurchased(string currentAccountModulePurchased);
+    void setLoanAccountModulePurchased (string loanAccountModulePurchased);
+    void setCustomizations(string customizations);
+  
     //==================================================
-    string getCurrentAccountModulePurchased()
-    {
-        return this->currentAccountModulePurchased;
-    }
-    string getLoanAccountModulePurchased ()
-    {
-        return this->loanAccountModulePurchased;
-    }
-    string getCustomizations()
-    {
-       return this->customizations;
-    }
-    void display(){
-            cout<<"Banking display"<<endl;
-            Project::display();
-            cout<<"\n:currentAccountModulePurchased"<<this->currentAccountModulePurchased<<endl;
-            cout<<"\n: loanAccountModulePurchased"<<this->loanAccountModulePurchased<<endl;
-            cout<<"\n:customizations "<<this->customizations<<endl;
-    }
+    string getCurrentAccountModulePurchased();
+    string getLoanAccountModulePurchased ();
+    string getCustomizations();
+  
+    void display();
+
+    private:
+    string currentAccountModulePurchased;
+    string loanAccountModulePurchased ;
+    string  customizations  ;
 
 };
+
+#endif

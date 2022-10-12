@@ -1,4 +1,4 @@
-#include "../header/header.h"
+#include <../header/header.h>
 
 /********************************************
  * 
@@ -179,7 +179,7 @@ map<string,Employee>  loadEmployee(string Empfile)
             count++;
       }
 
-      if (count == 12)
+      if (count == EMPCOUNT)
       {    
                E[eId]=e;
                i++; 
@@ -223,7 +223,7 @@ map<string,Project *> loadProject(string projectFile)
    outfile1.open(ERRPROJECT);
    if (!outfile1.is_open())
    {
-         cout << "Unable to open error file for writting  errFileName.txt" << endl;
+         cout << "UNABLE TO OPEN FILE" << endl;
          return P;
    }
    while(getline(input1,line1))
@@ -318,7 +318,7 @@ map<string,Project *> loadProject(string projectFile)
             string  telecomStandards;
             if(getline(ss1,internetProvider,'|'))
             {
-               if(validNames(internetProvider)){
+               if(validCharDigits(internetProvider)){
                   count1++;  
                }else
                {
@@ -328,7 +328,7 @@ map<string,Project *> loadProject(string projectFile)
             
             if(getline(ss1,satelliteLinks,'|'))
             {
-               if(validNames(satelliteLinks)){
+               if(validCharDigits(satelliteLinks)){
                count1++;  
                }else
                {
@@ -349,7 +349,7 @@ map<string,Project *> loadProject(string projectFile)
             {
                count1++;  
             }
-            if(count1==13)
+            if(count1==PCHILDCOUNT)
             {
                //cout<<"TELECOM"<<endl;
                telecom *t = new telecom;
@@ -396,7 +396,7 @@ map<string,Project *> loadProject(string projectFile)
             {
                count1++;  
             }
-            if(count1==13)
+            if(count1==PCHILDCOUNT)
             {
                banking *b = new banking;
                *b = banking(pId, type, desc, clientName,  stDate, edDate,  profCenter,  priority, noOfEmp,noOfAllocated,currentAccountModulePurchased, loanAccountModulePurchased,customizations);
@@ -415,7 +415,7 @@ map<string,Project *> loadProject(string projectFile)
             {
                count1++;  
             }
-            if ((count1 ==10))
+            if ((count1 ==PROCOUNT))
          {
             Project *p2 = new Project;
             *p2 = Project(pId,type,desc, clientName,  stDate,  edDate,  profCenter,  priority,  noOfEmp, noOfAllocated);

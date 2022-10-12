@@ -1,10 +1,4 @@
-P001|Management|nachoo|babu moshay|01/12/2022|01/12/2022|sdfdd|2|4|1
-P002|telecom|5G Communication|Airtel 5Gtech|07/12/2023|20/12/2023|sdfdd|3|8|5|sfsf|sds|faasff
-P004|banking|salary Payments|ICICI Bank,DEL|05/10/2022|01/11/2022|sdfdd|1|5|5|yes|no|vsdsvv
-P007|Technical|Software Updates|Lava tech.ltd|05/10/2022|15/12/2022|sdfdd|3|8|5
-P008|Managment|Data processing|Star investers|01/10/2022|10/10/2022|sdfdd|1|3|2
-P009|Technical|App Development|Apple Research|06/11/2022|10/12/2022|sdfdd|2|4|2
-P011|telecom|asdasd|asdasdad|10/12/2022|11/10/2022|ahdsd|1|12|0|vamsee|sushanth|kalyani
-P012|ad|asdsa|asdas|10/12/2022|11/12/2023|sd|1|0|0
-P013|telecom|asdsa|asdsad|10/12/2022|11/12/2022|asdsad|1|12|0|sadsadas|sadsad|asdsasa
-P014|ada|adsads|asdas|10/12/2022|10/12/2023|adad|1|12|0
+P001|Technical|AWS officials|Cloude officials|05/10/2022|15/12/2022|sales|3|8|0
+P002|banking|salary Payments|ICICI Bank,DEL|05/10/2022|01/11/2022|sales|1|5|1|yes|no|none
+P003|telecom|Management|Airtel|10/12/2022|11/12/2023|Technical|1|12|0|Maxtech|Jiofiber|WAN
+P005|telecom|WIFI connectivity|MaxTEch|10/12/2022|11/12/2023|AWS|1|12|0|Joi|AWS|WAn

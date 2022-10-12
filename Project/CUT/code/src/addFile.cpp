@@ -1,4 +1,4 @@
-#include "../header/header.h"
+#include <../header/header.h>
 
 /********************************************
  * *FUNCTION NAME : addEmp() 
@@ -47,7 +47,7 @@ void addEmp()
                     break;
                 }
                 else
-                    throw(1);
+                    throw (EXCEPTION);
             }
             catch(int a)
             {
@@ -71,7 +71,7 @@ void addEmp()
                     break;
                 }
                 else
-                    throw(1);
+                    throw(EXCEPTION);
             }
             catch(int a)
             {
@@ -95,7 +95,7 @@ void addEmp()
                     break;
                 }
                 else
-                    throw(1);
+                    throw(EXCEPTION);
             }
             catch(int a)
             {
@@ -119,7 +119,7 @@ void addEmp()
                     break;
                 }
                 else
-                    throw(1);
+                    throw(EXCEPTION);
             }
             catch(int a)
             {
@@ -142,7 +142,7 @@ void addEmp()
                     break;
                 }
                 else
-                    throw(1);
+                    throw(EXCEPTION);
             }
             catch(int a)
             {
@@ -166,7 +166,7 @@ void addEmp()
                     break;
                 }
                 else
-                    throw(1);
+                    throw(EXCEPTION);
             }
             catch(int a)
             {
@@ -190,7 +190,7 @@ void addEmp()
                     break;
                 }
                 else
-                    throw(1);
+                    throw(EXCEPTION);
             }
             catch(int a)
             {
@@ -213,12 +213,12 @@ void addEmp()
                     break;
                 }
                 else
-                    throw(1);
+                    throw(EXCEPTION);
             }
             catch(int a)
             {
                 cout<<"*****************************************************"<<endl;
-                cout<<"INVALID AREA OF Expertise "<<endl;
+                cout<<"INVALID AREA OF EXPERTISE "<<endl;
                 cout<<"ENTER VALID STRING AGAIN"<<endl;
                 cout<<"*****************************************************"<<endl;
             }
@@ -294,7 +294,7 @@ void addProject()
                     break;
                 }
                 else
-                    throw(1);
+                    throw(EXCEPTION);
             }
             catch(int a)
             {
@@ -318,7 +318,7 @@ void addProject()
                     break;
                 }
                 else
-                    throw(1);
+                    throw(EXCEPTION);
             }
             catch(int a)
             {
@@ -341,7 +341,7 @@ void addProject()
                     break;
                 }
                 else
-                    throw(1);
+                    throw(EXCEPTION);
             }
             catch(int a)
             {
@@ -365,7 +365,7 @@ void addProject()
                     break;
                 }
                 else
-                    throw(1);
+                    throw(EXCEPTION);
             }
             catch(int a)
             {
@@ -385,16 +385,16 @@ void addProject()
             {
                 if(validDate(edDate))
                 {
-                    if(date_cmp(edDate)==1)
+                    if(date_cmp(edDate)==1 && stDate_edDate(stDate,edDate)==1)
                         break;                                
                 }
-                throw(1);
+                throw(EXCEPTION);
             }
             catch(int a)
             {
                 cout<<"*****************************************************"<<endl;
                 cout<<"INVALID END DATE "<<endl;
-                cout<<"ENTER VALID END DATE AGAIN IN DD/MM/YYYY FORMAT"<<endl;
+                cout<<"ENTER VALID END DATE AGAIN IN DD/MM/YYYY FORMAT AND END DATE MUST BE GREATER THAN START DATE"<<endl;
                 cout<<"*****************************************************"<<endl;
             }
         }while(1);
@@ -414,7 +414,7 @@ void addProject()
                     break;
                 }
                 else
-                    throw(1);
+                    throw(EXCEPTION);
             }
             catch(int a)
             {
@@ -449,7 +449,7 @@ void addProject()
                         break;
                     }
                     else
-                        throw(1);
+                        throw(EXCEPTION);
                 }
                 catch(int a)
                 {
@@ -471,7 +471,7 @@ void addProject()
                         break;
                     }
                     else
-                        throw(1);
+                        throw(EXCEPTION);
                 }
                 catch(int a)
                 {
@@ -493,7 +493,7 @@ void addProject()
                         break;
                     }
                     else
-                        throw(1);
+                        throw(EXCEPTION);
                 }
                 catch(int a)
                 {
@@ -554,7 +554,7 @@ void addProject()
                         break;
                     }
                     else
-                        throw(1);
+                        throw(EXCEPTION);
                 }
                 catch(int a)
                 {
@@ -578,7 +578,7 @@ void addProject()
                         break;
                     }
                     else
-                        throw(1);
+                        throw(EXCEPTION);
                 }
                 catch(int a)
                 {
@@ -601,7 +601,7 @@ void addProject()
                         break;
                     }
                     else
-                        throw(1);
+                        throw(EXCEPTION);
                 }
                 catch(int a)
                 {

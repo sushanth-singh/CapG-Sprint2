@@ -1,7 +1,4 @@
-// #include<iostream>
-// using namespace std;
-#include "../header/header.h"
-
+#include <../header/header.h>
 /********************************************
  * *FUNCTION NAME : main() 
  *
